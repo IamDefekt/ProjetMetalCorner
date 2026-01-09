@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+:root {
+    --txtBlack: #0d0d0d;
+    --txtBlanc: #efefef;
+    --mainColor : #4C1E1E;
+    --bgColor : #efefef;
+}
+
+body {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font: 0.8rem lato;
+    background-color: var(--bgColor);
+    color: var(--txtBlack);
+}
+
+h1 { font-size: 1.2rem; }
+
+h2 { font-size: 1rem; }
+
+h1, h2 { font-family: amarante; }
+
+h3 { word-spacing: 1px; }
+
+h1, h2, h3 { 
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+a { 
+    text-decoration: none;
+    color: var(--txtBlack); 
+}
+
+nav a, footer a { color: var(--txtBlanc); }
+
+button, a { cursor: pointer; }
+
+li, ul { list-style: none; }
+
+main { 
+    flex: 1;
+    margin: 30px 0;
+}
+
+/* NAVBAR */ 
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.liste {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: var(--mainColor);
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.5s ease;
+}
+
+.liste.open {
+    display: block;
+    max-height: 500px;
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+}
+
+.burger span {
+    display: block;
+    height: 4px;
+    width: 30px;
+    border-radius: 3px;
+    background-color: var(--txtBlanc);
+    transition: 0.4s ease;
+}
+
+.burger.open span:nth-child(1) { transform: rotate(45deg) translate(7px, 6px); }
+
+.burger.open span:nth-child(2) { opacity: 0; }
+
+.burger.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+.navbar {
+    height: 80px;
+    padding: 0 20px 0 10px;
+    background-color: var(--mainColor);
+    color: var(--txtBlanc);
+}
+
+.navbar, .nom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    text-transform: uppercase;   
+}
+
+.nom img { width: 55px; }
+
+.un { font: 1.6rem amarante; }
+
+.deux { font: 1.3rem amarante; }
+
+.nom p { line-height: 25px;}
+
+.navbar ul, .navbar li {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.navbar li a {
+    color: var(--txtBlanc);
+    border-bottom: solid 1px rgb(111, 95, 95);
+    padding: 15px;
+}
+
+.navbar li a:hover {
+    background-color: var(--bgColor);
+    color: var(--txtBlack);
+    transition: 0.5s ease;
+}
+
+
+
+
+
+
+/* VERSION TABLETTE */
+
+@media (min-width: 426px ) {
+
+    h1 { font-size: 1.5rem; }
+
+    h2 { font-size: 1.2rem; }
+
+    .navbar { padding: 0 60px 0 50px; }
+
+}
+
+
+
+/*  VERSION DESKTOP  */
+
+@media (min-width: 769px ) {
+
+    h1 { font-size: 1.8rem; }
+
+    h2 { font-size: 1.4rem; }
+
+    main { margin: 50px 0;}
+
+    #menuBurger { display: none; }
+
+    .un { font-size: 2rem; }
+
+    .deux { font-size: 1.6rem; }
+
+    .liste {
+        position: static;
+        background-color: var(--mainColor);
+        max-height: none;
+        display: flex;
+        gap: 40px;
+    }
+
+    .navbar {
+        height: 100px;
+        padding: 0 30px;
+    }
+
+    .nom img { width: 65px; }
+
+    .navbar ul, .navbar li {
+        font-size: 0.9rem;
+        width: auto;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .navbar li a {
+        border: none;
+        padding: 0;
+        word-spacing: 3px;
+    }
+
+    .navbar li a:hover { 
+        background-color: var(--mainColor);
+        color: var(--txtBlanc);
+        transition: none;
+    }
+
+
+
+}
+
+
+
+/*  ECRAN LARGE 1440  */
+
+@media (min-width: 1025px ) {
+
+    main { margin: 80px 0; }
+
+    h1 { font-size: 2rem; }
+
+    h2 { font-size: 1.6rem; }
+
+    h3 { font-size: 1.3rem; }
+
+    .navbar ul, .navbar li {
+        font-size: 1.1rem;
+        gap: 80px;
+    }
+
+    .navbar { 
+        height: 120px;
+        padding: 0 60px; 
+    }
+}

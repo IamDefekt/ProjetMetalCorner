@@ -1,0 +1,32 @@
+h1 { margin-bottom: 30px;}
+
+h3 { margin: 0 25px;}
+
+main p { 
+    padding: 25px;
+    text-align: justify;
+}
+
+@media (min-width:769px) {
+
+    h3 { 
+        margin: 0;
+        font-size: 1.1rem; }
+
+    main p { 
+        padding: 25px 70px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:1025px) {
+
+    h1 { margin-bottom: 50px; }
+
+    h3 { font-size: 1.5rem; }
+
+    main p { 
+        padding: 35px 190px;
+        font-size: 1.3rem;
+    }
+}

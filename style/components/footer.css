@@ -1,0 +1,43 @@
+/*  VERSION MOBILE  */
+
+footer {
+    height: 100px;
+    background-color: var(--mainColor);
+    color: var(--txtBlanc);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.nom { text-transform: uppercase;}
+
+/*   VERSION TABLETTE   */
+
+@media (min-width: 426px ) {
+
+    footer { 
+        font-size: 0.9rem;
+        padding: 0 50px;
+    }
+
+}
+
+/*   VERSION DESKTOP   */
+
+@media (min-width: 769px ) {
+
+    footer { padding: 0 30px; }   
+    
+}
+
+@media (min-width: 1025px ) {
+
+    footer { 
+        height: 120px;
+        font-size: 1.2rem;
+        padding: 0 60px;
+    }
+}
