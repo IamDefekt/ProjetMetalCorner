@@ -1,31 +1,28 @@
 /*  VERSION MOBILE  */
 
-.title { margin: 35px 0 0;}
-
-.form {
+form {
     display: flex;
     flex-direction: column;
     justify-self: center;
 }
 
-.form input {
+form input {
     width: 310px;
     height: 40px;
     border-radius: 5px;
-    background-color: var(--black);
-    border : 1px solid var(--white); 
-    color: var(--white); 
+    background-color: var(--bgColor);
+    border : 1px solid var(--txtBlack); 
     font-family: Lato;
     padding-left: 10px;
 }
 
-.form input::placeholder { font-size: 0.8rem; }
+form input::placeholder { font-size: 0.8rem; }
 
-.form label {
+form label {
     font-size: 1rem;
     margin: 15px 0 5px 15px;
     transform: translatey(13px);
-    background-color: var(--black);
+    background-color: var(--bgColor);
 }
 
 span[id^='error'] {
@@ -38,34 +35,38 @@ span[id^='error'] {
 .cgu {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
     justify-content: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
+    margin-top: 5px;
 }
 
-.form button {
-    padding: 7px;
+form button {
+    padding: 10px;
     border-radius: 5px;
-    background-color: var(--red); 
+    background-color: var(--mainColor); 
     border: none;
     font: 0.9rem lato;
-    color: var(--white);
+    color: var(--txtBlanc);
     text-transform: uppercase;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
 
-/*  VERSION TABLETTE & DESKTOP  */
+/*  VERSION DESKTOP  */
 
-@media (min-width: 600px ) {
+@media (min-width: 769px ) {
 
-    .title { margin: 45px 0 5px;}
+    form { margin-top: 30px; }
 
-    .form input { width: 350px; }
+    form input { width: 350px; }
 
-    .form button, .form p { font-size: 1rem; }
+    .cgu { 
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    form button { font-size: 1rem; }
 
 }
 

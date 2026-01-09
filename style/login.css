@@ -1,72 +1,73 @@
 /*  VERSION MOBILE  */
 
-.title { margin: 35px 0 0;}
+.form { 
+    width: 300px;
+    justify-self: center;
+}
 
-.form {
+form {
     display: flex;
     flex-direction: column;
     justify-self: center;
 }
 
-.form input {
+form input {
     width: 310px;
     height: 40px;
     border-radius: 5px;
     background-color: var(--bgColor);
     border : 1px solid var(--txtBlack);
-    color: var(--white);
     font-family: Lato;
     padding-left: 10px;
 }
 
-.form input::placeholder { font-size: 0.8rem; }
+form input::placeholder { font-size: 0.8rem; }
 
-.form label {
+form label {
     font-size: 1rem;
     margin: 15px 0 5px 15px;
     transform: translatey(13px);
-    background-color: var(--black);
+    background-color: var(--bgColor);
 }
 
-.form button {
-    padding: 7px;
+form button {
+    margin-top: 30px;
+    padding: 10px;
     border-radius: 5px;
-    background-color: var(--red);
+    background-color: var(--mainColor);
     border: none;
     font: 0.9rem lato;
     text-transform: uppercase;
 }
 
-.create, .mdp { 
+#btn a { color: var(--txtBlanc);}
+
+.reset {
+    text-align: right; 
+    margin: 15px 0;
     text-decoration: underline;
-    font-size: 0.9rem;
 }
 
-.create {
+.signin { 
     text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
+    margin: 35px 0;
 }
 
-.mdp {
-    text-align: right;
-    margin: 25px 10px;
-}
 
-.form p {
-    text-align: center;
-    margin: 25px 0;
-}
 
-/*  VERSION TABLETTE & DESKTOP */
+/*  VERSION DESKTOP */
 
-@media (min-width: 600px ) {
+@media (min-width: 769px ) {
 
-    .title { margin: 45px 0 5px;}
+    .form, form input { width: 350px; }
 
-    .form input { width: 350px; }
+    form { margin-top: 30px; }
 
-    .form button, .form p, .create, .mdp { font-size: 1rem; }
+    form button, .reset, .signin { font-size: 1rem; }
 
-    .mdp, .form p { margin: 35px 0;}
+    .signin { margin: 60px 0 20px; }
+
 
 }

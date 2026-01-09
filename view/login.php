@@ -12,25 +12,29 @@
     
     <main>
 
-        <h1 class="title">Se Connecter</h1>
+        <h1>Se Connecter</h1>
+
+        <div class="form">
     
-        <form class="form" id="connexionUser">
+            <form id="connexionUser">
 
-            <label style="width:98px">Adresse email</label>
-            <input placeholder="Obligatoire" type="email" id="emailAdress" tabindex="1" required> 
+                <label style="width:98px">Adresse email</label>
+                <input placeholder="Obligatoire" type="email" id="emailAdress" tabindex="1" required> 
 
-            <label style="width:93px">Mot de passe</label>
-            <input placeholder="Obligatoire" type="password" id="userPw" tabindex="2" required>
+                <label style="width:93px">Mot de passe</label>
+                <input placeholder="Obligatoire" type="password" id="userPw" tabindex="2" required>
 
-            <a class="mdp" href="#">Mot de passe oublié ?</a>
+                <button id="btn" type="submit"/><a href="/view/compte.php">Se connecter</a></button>
+            </form>
 
-            <button id="btn" type="submit"/><a href="/view/compte.php">Se connecter</a></button>
+            <div class="reset">
+                <a href="#">Mot de passe oublié ?</a>
+            </div>
 
-            <p>ou</p>
-
-            <a href="/view/signup.php" class="create" >Je n'ai pas encore de compte</a>
-        </form>
-
+                <div class="signin">
+                <a href="/view/signup.php">Je n'ai pas encore de compte</a>
+            </div>
+        </div>
     </main>        
         
     <?php include __DIR__ . '/components/footer.php'; ?>

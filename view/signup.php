@@ -15,9 +15,9 @@
 
         <!-- <h1 class="title"><span>Créer</span> mon compte<span style="visibility:hidden;">text</span></h1> -->
 
-        <h1 class="title">Créer mon compte</h1>
+        <h1>Créer mon compte</h1>
 
-        <form class="form" id="createAccount">
+        <form id="createAccount">
 
             <label for="name" style="width:122px">Nom d'utilisateur</label>
             <input placeholder="Obligatoire" type="username" id="username" tabindex="1" required> 
@@ -41,7 +41,7 @@
 
             <div class="cgu">
                 <input type="checkbox" name="cgu" id="cgu" style="width: 15px;">
-                <p>J'accepte les conditions d'utilisation</p>
+                <p>J'accepte les conditions générales d'utilisation</p>
             </div>
 
             <span id='errorCgu' aria-live="polite"></span>

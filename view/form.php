@@ -13,7 +13,7 @@
 
     <main>
 
-        <h1 class="title">Nous Contacter</h1>
+        <h1>Nous Contacter</h1>
     
         <form class="form" id="contactForm">
 
