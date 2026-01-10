@@ -12,7 +12,7 @@
 
     <main>
 
-        <h1 class="title">Mon Compte</h1>
+        <h1>Mon Compte</h1>
 
         <div class="ancre">
             <h3><a href="#infos">Informations personnelles</a></h3> 
@@ -204,8 +204,6 @@
             </div>
 
         </div>
-
-        <span class="sep"></span>
 
         <div class="logout">
             <a href="/view/logout.php">Se déconnecter</a>
