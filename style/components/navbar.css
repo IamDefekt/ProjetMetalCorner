@@ -103,14 +103,14 @@ header {
 
 .burger.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
-.navbar {
+nav {
     height: 80px;
     padding: 0 20px 0 10px;
     background-color: var(--mainColor);
     color: var(--txtBlanc);
 }
 
-.navbar, .nom {
+nav, .nom {
     display: flex;
     align-items: center;
     justify-content: space-between; 
@@ -125,20 +125,20 @@ header {
 
 .nom p { line-height: 25px;}
 
-.navbar ul, .navbar li {
+nav ul, nav li {
     width: 100vw;
     display: flex;
     flex-direction: column;
     font-size: 0.8rem;
 }
 
-.navbar li a {
+nav li a {
     color: var(--txtBlanc);
     border-bottom: solid 1px rgb(111, 95, 95);
     padding: 15px;
 }
 
-.navbar li a:hover {
+nav li a:hover {
     background-color: var(--bgColor);
     color: var(--txtBlack);
     transition: 0.5s ease;
@@ -157,7 +157,7 @@ header {
 
     h2 { font-size: 1.2rem; }
 
-    .navbar { padding: 0 60px 0 50px; }
+    nav { padding: 0 60px 0 50px; }
 
 }
 
@@ -185,38 +185,54 @@ header {
         max-height: none;
         display: flex;
         gap: 40px;
+        overflow: visible;
     }
 
-    .navbar {
+    nav {
         height: 100px;
         padding: 0 30px;
     }
 
     .nom img { width: 65px; }
 
-    .navbar ul, .navbar li {
+    nav ul, nav li {
         font-size: 0.9rem;
         width: auto;
         flex-direction: row;
         gap: 40px;
     }
 
-    .navbar li a {
+    nav li a {
+        position: relative;
         border: none;
         padding: 0;
         word-spacing: 3px;
     }
 
-    .navbar li a:hover { 
-        background-color: var(--mainColor);
+    nav li a:hover { 
         color: var(--txtBlanc);
+        background: none;
         transition: none;
     }
 
+    nav li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--txtBlanc);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
 
+    nav li a:hover::after {
+        transform: scaleX(1);
+    }
 
 }
-
 
 
 /*  ECRAN LARGE 1440  */
@@ -231,12 +247,12 @@ header {
 
     h3 { font-size: 1.3rem; }
 
-    .navbar ul, .navbar li {
+    nav ul, nav li {
         font-size: 1.1rem;
         gap: 80px;
     }
 
-    .navbar { 
+    nav { 
         height: 120px;
         padding: 0 60px; 
     }

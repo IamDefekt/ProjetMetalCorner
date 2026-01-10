@@ -8,8 +8,8 @@
 </head>
 <body>
 
-    <header class="header">
-        <nav class="navbar">
+    <header>
+        <nav>
 
             <div class="nom">
                 <a href="/index.php"><img src="/media/logo2.png" alt="Logo Metal Corner chat"></a>
