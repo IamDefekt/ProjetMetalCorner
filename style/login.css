@@ -45,7 +45,6 @@ form button {
 .reset {
     text-align: right; 
     margin: 15px 0;
-    text-decoration: underline;
 }
 
 .signin { 
@@ -54,6 +53,8 @@ form button {
     text-align: center;
     margin: 35px 0;
 }
+
+.reset, .signin { text-decoration: underline; }
 
 
 

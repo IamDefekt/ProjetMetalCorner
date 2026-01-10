@@ -32,7 +32,7 @@
             </div>
 
                 <div class="signin">
-                <a href="/view/signup.php">Je n'ai pas encore de compte</a>
+                <a href="/view/signup.php">Vous n'avez pas encore de compte ?</a>
             </div>
         </div>
     </main>        
