@@ -1,9 +1,8 @@
 /*  VERSION MOBILE  */
 
-h1 span {
-    transform: rotate(-90deg) translatex(-12px) translatey(6px);
-    font-size: 0.7rem;
-}
+h1 { margin-bottom: 30px; }
+
+main a { text-decoration: underline; }
 
 .actus {
     display: grid;
@@ -64,27 +63,11 @@ article {
 
 
 
-/*  VERSION TABLETTE  */
-
-@media (min-width: 600px ) {
-
-    h1 span {
-        transform: rotate(-90deg) translatex(-15px) translatey(8px);
-        font-size: 0.9rem;
-    }
-
-}
-
-
-
 /*  VERSION DESKTOP  */
 
 @media (min-width: 769px ) {
 
-    h1 span {
-        transform: rotate(-90deg) translatex(-18px) translatey(10px);
-        font-size: 1.1rem;
-    } 
+    h1 { margin-bottom: 50px; }
 
     .actus {
         grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));

@@ -26,8 +26,6 @@
                 </div>
 
                 <img src="/media/bands/BMTH2.jpg" alt="Groupe Bring me the Horizon">
-
-                <span class="separateur"></span>
             </article>
 
             <article>
@@ -40,12 +38,10 @@
                 </div>    
 
                 <img src="/media/bands/LornaShore.jpg" alt="Groupe Lorna Shore">
-
-                <span class="separateur"></span>
             </article>
             
             <article>
-                <h2>Review du concert de F.I.R au LDLC Arena </h2>
+                <h2>Review du concert de Falling in Reverse au LDLC Arena </h2>
             
                 <div class="txt">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio asperiores aliquid accusamus, qui dolor laborum... </p>
@@ -54,8 +50,6 @@
                 </div>  
 
                 <img src="/media/bands/FIR.jpg" alt="Groupe Falling in Reverse">
-
-                <span class="separateur"></span>
             </article>
 
             <article>
@@ -68,8 +62,6 @@
                 </div>  
 
                 <img src="/media/bands/DefLeppard.jpg" alt="Groupe Def Lepard">
-
-                <span class="separateur"></span>
             </article>
             
             <article>
@@ -82,8 +74,6 @@
                 </div>  
                 
                 <img src="/media/bands/Deftones.jpg" alt="Groupe Deftones">
-
-                <span class="separateur"></span>
             </article>
 
             <article>
