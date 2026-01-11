@@ -15,6 +15,22 @@ burger.addEventListener('click', () => {
 
 // LIGHT/DARK MODE
 
+const toggleBtn = document.getElementById("btn-toggle");
+const body = document.body;
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+
+}
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark");
+
+  const theme = body.classList.contains("dark") ? "dark" : "light";
+  localStorage.setItem("theme", theme);
+});
 
 
 // const heart = document.querySelector("#heart path");

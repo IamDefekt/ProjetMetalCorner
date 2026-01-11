@@ -6,6 +6,7 @@
     <title>Métal Corner - Nous contacter</title>
     <link rel="stylesheet" href="/style/form.css">
     <script src="/scripts/form.js" type="module" defer></script>
+    <script src="/scripts/main.js" type="module" defer></script>
 </head>
 <body>
 
@@ -15,7 +16,7 @@
 
         <h1>Nous Contacter</h1>
     
-        <form class="form" id="contactForm">
+        <form id="form">
 
             <label for="artistName" style="width:153px">Nom du/des artiste(s)</label>
             <input placeholder="Obligatoire" type="text" id="artistName" tabindex="1" required> 

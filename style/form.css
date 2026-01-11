@@ -1,12 +1,12 @@
 /*  VERSION MOBILE  */
 
-.form {
+form {
     display: flex;
     flex-direction: column;
     justify-self: center;
 }
 
-.form input {
+form input {
     width: 310px;
     height: 40px;
     border-radius: 5px;
@@ -18,7 +18,7 @@
 
 .form input::placeholder { font-size: 0.8rem; }
 
-.form label {
+form label {
     font-size: 1rem;
     margin: 15px 0 5px 15px;
     transform: translatey(13px);
@@ -33,7 +33,7 @@ span[id^='error'] {
     font-weight: bold;
 }
 
-.form textarea {
+form textarea {
     width: 310px;
     height: 150px;
     border-radius: 5px;
@@ -45,7 +45,9 @@ span[id^='error'] {
     font: 1rem lato;
 }
 
-.form button {
+
+
+form button {
     padding: 10px;
     border-radius: 5px;
     margin-top: 25px;
@@ -57,7 +59,8 @@ span[id^='error'] {
     cursor: pointer;
 }
 
-.form p {
+
+form p {
     text-align: center;
     margin-top: 30px;
     font-weight: bold;
@@ -69,11 +72,11 @@ span[id^='error'] {
 
 @media (min-width: 769px ) {
 
-    .form { margin-top: 30px;}
+    form { margin-top: 30px;}
 
-    .form input { width: 350px; }
+    form input { width: 350px; }
 
-    .form textarea { width: 350px; }
+    form textarea { width: 350px; }
 
 }
 
