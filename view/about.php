@@ -16,7 +16,7 @@
 
         <h3>Le Metal Corner est un site participatif et a besoin de vous pour le faire vivre !</h3>
 
-        <p>Concerts à venir, scènes locales, pogos improvisés : découvre tout ce qui fait vibrer la région Rhône-Alpes. Que tu sois fan de growl, de guitare qui pleure ou juste en quête d'un bon live à boire (et à voir), t'es au bon endroit ! <br><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur repudiandae explicabo dolores! Animi ea placeat pariatur doloremque vitae sunt odit eius quaerat? Beatae quae rem repellat, ipsam cum deserunt id. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione voluptatum voluptatem ad eum molestias velit at doloremque odio consectetur quia voluptas dolor mollitia aliquam necessitatibus, nostrum consequatur fugiat, corporis fuga!</p>
+        <p>Concerts à venir, scènes locales, pogos improvisés : découvre tout ce qui fait vibrer la région Rhône-Alpes. Que tu sois fan de growl, de guitare qui pleure ou juste en quête d'un bon live à boire (et à voir), t'es au bon endroit ! <br><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur repudiandae explicabo dolores! Animi ea placeat pariatur doloremque vitae sunt odit eius quaerat? Beatae quae rem repellat, ipsam cum deserunt id. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione voluptatum voluptatem ad eum molestias velit at doloremque odio consectetur quia voluptas dolor mollitia aliquam necessitatibus, nostrum consequatur fugiat, corporis fuga! <br><br> Tu souhaites devenir bénévole et rejoindre la team du Métal Corner ? Tu peux nous contacter <a href="mailto:test@test.com">ici</a>.</p>
 
     </main>
 
