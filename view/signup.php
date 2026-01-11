@@ -19,22 +19,22 @@
 
         <form id="createAccount">
 
-            <label for="name" style="width:122px">Nom d'utilisateur</label>
+            <label for="name" style="width:125px">Nom d'utilisateur</label>
             <input placeholder="Obligatoire" type="username" id="username" tabindex="1" required> 
 
             <span id='errorUsername'></span>
 
-            <label for="email" style="width:98px">Adresse email</label>
+            <label for="email" style="width:101px">Adresse email</label>
             <input placeholder="Obligatoire" type="email" id="emailAdress" tabindex="2" required> 
 
             <span id='errorMail' aria-live="polite"></span>
 
-            <label for="password" style="width:93px">Mot de passe</label>
+            <label for="password" style="width:95px">Mot de passe</label>
             <input placeholder="Obligatoire" type="password" id="userPw" tabindex="3" required>
 
             <span id='errorPw' aria-live="polite"></span>
 
-            <label for="password" style="width:167px">Confirmer mot de passe</label>
+            <label for="password" style="width:186px">Confirmer le mot de passe</label>
             <input placeholder="Obligatoire" type="password" id="confirmPW" tabindex="4" required>
 
             <span id='errorPw2' aria-live="polite"></span>

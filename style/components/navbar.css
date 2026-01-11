@@ -50,6 +50,8 @@ button, a { cursor: pointer; }
 
 li, ul { list-style: none; }
 
+label { font-weight: bold; }
+
 main { 
     flex: 1;
     margin: 30px 0;

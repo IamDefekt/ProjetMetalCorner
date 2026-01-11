@@ -13,6 +13,10 @@ burger.addEventListener('click', () => {
 });
 
 
+// LIGHT/DARK MODE
+
+
+
 // const heart = document.querySelector("#heart path");
 
 // heart.addEventListener('click', () => {
@@ -22,46 +26,7 @@ burger.addEventListener('click', () => {
 
 //  -------------- INDEX (HOME) --------------
 
-// CAROUSEL
 
-const buttons = document.querySelectorAll('.btn');
-const slides = document.querySelectorAll('.slide');
-
-let autoSlideInterval;
-
-function changeSlide(direction) {
-  const activeSlide = document.querySelector('.slide.active');
-  const currentIndex = [...slides].indexOf(activeSlide);
-
-  let newIndex = currentIndex + direction;
-
-  if (newIndex < 0) newIndex = slides.length - 1;
-  if (newIndex >= slides.length) newIndex = 0;
-
-  activeSlide.classList.remove('active');
-  slides[newIndex].classList.add('active');
-}
-
-function startAutoSlide() {
-  autoSlideInterval = setInterval(() => {
-    changeSlide(1);
-  }, 2500);
-}
-
-function resetAutoSlide() {
-  clearInterval(autoSlideInterval);
-  startAutoSlide();
-}
-
-buttons.forEach(button => {
-  button.addEventListener('click', (e) => {
-    const direction = e.target.id === 'next' ? 1 : -1;
-    changeSlide(direction);
-    resetAutoSlide();
-  });
-});
-
-startAutoSlide();
 
 
 

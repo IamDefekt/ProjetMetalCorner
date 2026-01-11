@@ -18,10 +18,10 @@
     
             <form id="connexionUser">
 
-                <label style="width:98px">Adresse email</label>
+                <label style="width:101px">Adresse email</label>
                 <input placeholder="Obligatoire" type="email" id="emailAdress" tabindex="1" required> 
 
-                <label style="width:93px">Mot de passe</label>
+                <label style="width:95px">Mot de passe</label>
                 <input placeholder="Obligatoire" type="password" id="userPw" tabindex="2" required>
 
                 <button id="btn" type="submit"/><a href="/view/compte.php">Se connecter</a></button>
