@@ -50,9 +50,9 @@
 
     <section class="cta">
 
-        <h3>Tu connais un concert ou un festival qui n'est pas listé ?</h3>
+        <h3>Un concert ou un festival n'est pas listé ? Dis le nous !</h3>
 
-        <a class="cta_btn" href="/view/form">Proposer un concert</a>
+        <a class="cta_btn" href="/view/form">Proposer un évènement</a>
 
     </section>
         
