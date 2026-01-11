@@ -74,7 +74,7 @@ h3 { margin: 30px 0; }
 #popup-container.open { display: block !important; }
 
 .popup-content {
-    max-width: 600px;
+    max-width: 650px;
     width: 80%;
     padding: 15px;
     background: var(--bgColor);
@@ -90,7 +90,8 @@ h3 { margin: 30px 0; }
 
 .popup-content p {
     color: var(--txtBlack);
-    padding: 20px 0;    
+    font-weight: bold;
+    padding: 0 0 30px;    
 }
 
 .popup-content button {
