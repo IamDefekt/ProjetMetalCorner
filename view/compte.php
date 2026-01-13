@@ -206,7 +206,7 @@
         </div>
 
         <div class="logout">
-            <a href="/view/logout.php">Se déconnecter</a>
+            <a href="/ressources/php/logout.php">Se déconnecter</a>
         </div>
 
     </main>
