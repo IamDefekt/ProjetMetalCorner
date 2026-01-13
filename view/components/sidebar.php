@@ -17,7 +17,7 @@
         </ul>
 
         <div class="btn">
-            <a class="logout" href="/view/logout.php">Se déconnecter</a>
+            <a class="logout" href="/ressources/php/logout.php">Se déconnecter</a>
         </div>
     </nav>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="/style/components/navbar.css"> 
-    <script src="/scripts/main.js" type="module" defer></script>
+    <script src="/ressources/scripts/main.js" type="module" defer></script>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
         <nav>
 
             <div class="nom">
-                <a href="/index.php"><img src="/media/logo2.png" alt="Logo Metal Corner chat"></a>
+                <a href="/index.php"><img src="/ressources/media/logo.png" alt="Logo Metal Corner chat"></a>
                 <div class="titre">
                     <a href="/index.php"><p class="un">Metal</p>
                     <p class="deux">Corner</p></a>

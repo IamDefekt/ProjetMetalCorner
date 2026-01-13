@@ -25,7 +25,7 @@
                     <a href="#">Lire la suite</a>
                 </div>
 
-                <img src="/media/bands/BMTH2.jpg" alt="Groupe Bring me the Horizon">
+                <img src="/ressources/media/bands/BMTH2.jpg" alt="Groupe Bring me the Horizon">
             </article>
 
             <article>
@@ -37,7 +37,7 @@
                     <a href="#">Lire la suite</a>
                 </div>    
 
-                <img src="/media/bands/LornaShore.jpg" alt="Groupe Lorna Shore">
+                <img src="/ressources/media/bands/LornaShore.jpg" alt="Groupe Lorna Shore">
             </article>
             
             <article>
@@ -49,7 +49,7 @@
                     <a href="#">Lire la suite</a>
                 </div>  
 
-                <img src="/media/bands/FIR.jpg" alt="Groupe Falling in Reverse">
+                <img src="/ressources/media/bands/FIR.jpg" alt="Groupe Falling in Reverse">
             </article>
 
             <article>
@@ -61,7 +61,7 @@
                     <a href="#">Lire la suite</a>
                 </div>  
 
-                <img src="/media/bands/DefLeppard.jpg" alt="Groupe Def Lepard">
+                <img src="/ressources/media/bands/DefLeppard.jpg" alt="Groupe Def Lepard">
             </article>
             
             <article>
@@ -73,7 +73,7 @@
                     <a href="#">Lire la suite</a>
                 </div>  
                 
-                <img src="/media/bands/Deftones.jpg" alt="Groupe Deftones">
+                <img src="/ressources/media/bands/Deftones.jpg" alt="Groupe Deftones">
             </article>
 
             <article>
@@ -85,7 +85,7 @@
                     <a href="#">Lire la suite</a>
                 </div>  
 
-                <img src="/media/bands/MtS.jpg" alt="Groupe Make them Suffer">
+                <img src="/ressources/media/bands/MtS.jpg" alt="Groupe Make them Suffer">
             </article>
 
         </div>

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Métal Corner - Nous contacter</title>
     <link rel="stylesheet" href="/style/form.css">
-    <script src="/scripts/form.js" type="module" defer></script>
-    <script src="/scripts/main.js" type="module" defer></script>
+    <script src="/ressources/scripts/form.js" type="module" defer></script>
+    <script src="/ressources/scripts/main.js" type="module" defer></script>
 </head>
 <body>
 

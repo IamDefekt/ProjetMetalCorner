@@ -12,7 +12,7 @@
 
     <main class="event">
         
-        <img src="/media/bands/ElectricCallboy.webp" alt="">
+        <img src="/ressources/media/bands/ElectricCallboy.webp" alt="">
 
         <h1>Electric Callboy</h1>
 

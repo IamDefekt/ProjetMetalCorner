@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Métal Corner - Créer mon compte</title>
     <link rel="stylesheet" href="/style/signup.css">
-    <script src="/scripts/creationUser.js" defer></script>
+    <script src="/ressources/scripts/creationUser.js" defer></script>
 </head>
 <body>
 

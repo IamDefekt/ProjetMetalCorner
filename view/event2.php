@@ -12,7 +12,7 @@
 
     <main class="event">
         
-        <img src="/media/bands/MIW.webp" alt="">
+        <img src="/ressources/media/bands/MIW.webp" alt="">
 
         <h1 class="bandName">Motionless in White</h1>
 

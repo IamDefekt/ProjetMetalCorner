@@ -25,7 +25,7 @@
         <div class="infos" id="infos">
             <div class="pp_pers">
 
-                <img src="/media/pp.png" alt="Photo de profil">
+                <img src="/ressources/media/pp.png" alt="Photo de profil">
 
                 <div class="pers">
                     <p id="username">Nom d'utilisateur : YOUtopia</p>
@@ -62,7 +62,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/Architects.png" alt="Photo du groupe Architects">
+                        <img src="/ressources/media/bands/Architects.png" alt="Photo du groupe Architects">
                         <p>Architects</p>
                     </div>
                     <a href="">Suivis</a>
@@ -70,7 +70,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/BadOmens.jpg" alt="Photo du groupe Bad Omens">
+                        <img src="/ressources/media/bands/BadOmens.jpg" alt="Photo du groupe Bad Omens">
                         <p>Bad Omens</p>
                     </div>
                     <a href="">Suivis</a>
@@ -78,7 +78,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/BlackVeilBrides.jpg" alt="Photo du groupe Black Veil Brides">
+                        <img src="/ressources/media/bands/BlackVeilBrides.jpg" alt="Photo du groupe Black Veil Brides">
                         <p>Black Veil Brides</p>
                     </div>
                     <a href="">Suivis</a>
@@ -86,7 +86,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/BMTH2.jpg" alt="Photo du groupe Bring me the Horizon">
+                        <img src="/ressources/media/bands/BMTH2.jpg" alt="Photo du groupe Bring me the Horizon">
                         <p>Bring me the Horizon</p>
                     </div>
                     <a href="">Suivis</a>
@@ -94,7 +94,7 @@
 
                             <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/Deftones.jpg" alt="Photo du groupe Deftones">
+                        <img src="/ressources/media/bands/Deftones.jpg" alt="Photo du groupe Deftones">
                         <p>Deftones</p>
                     </div>
                     <a href="">Suivis</a>
@@ -102,7 +102,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/ElectricCallboy.webp" alt="Photo du groupe Electric Callboy">
+                        <img src="/ressources/media/bands/ElectricCallboy.webp" alt="Photo du groupe Electric Callboy">
                         <p>Electric Callboy</p>
                     </div>
                     <a href="">Suivis</a>
@@ -110,7 +110,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/Eisbrecher.jpg" alt="Photo du groupe Eisbrecher">
+                        <img src="/ressources/media/bands/Eisbrecher.jpg" alt="Photo du groupe Eisbrecher">
                         <p>Eisbrecher</p>
                     </div>
                     <a href="">Suivis</a>
@@ -118,7 +118,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/FIR.jpg" alt="Photo du groupe Falling in Reverse">
+                        <img src="/ressources/media/bands/FIR.jpg" alt="Photo du groupe Falling in Reverse">
                         <p>Falling in Reverse</p>
                     </div>
                     <a href="">Suivis</a>
@@ -126,7 +126,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/korn.jpg" alt="Photo du groupe KoRn">
+                        <img src="/ressources/media/bands/korn.jpg" alt="Photo du groupe KoRn">
                         <p>Korn</p>
                     </div>
                     <a href="">Suivis</a>
@@ -134,7 +134,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/LinkinPark.jpg" alt="Photo du groupe Linkin Park">
+                        <img src="/ressources/media/bands/LinkinPark.jpg" alt="Photo du groupe Linkin Park">
                         <p>Linkin Park</p>
                     </div>
                     <a href="">Suivis</a>
@@ -142,7 +142,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/LornaShore.jpg" alt="Photo du groupe Lorna Shore">
+                        <img src="/ressources/media/bands/LornaShore.jpg" alt="Photo du groupe Lorna Shore">
                         <p>Lorna Shore</p>
                     </div>
                     <a href="">Suivis</a>
@@ -150,7 +150,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/MtS.jpg" alt="Photo du groupe Make them Suffer">
+                        <img src="/ressources/media/bands/MtS.jpg" alt="Photo du groupe Make them Suffer">
                         <p>Make them Suffer</p>
                     </div>
                     <a href="">Suivis</a>
@@ -158,7 +158,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/mm.jpg" alt="Photo du groupe de Marilyn Manson">
+                        <img src="/ressources/media/bands/mm.jpg" alt="Photo du groupe de Marilyn Manson">
                         <p>Marilyn Manson</p>
                     </div>
                     <a href="">Suivis</a>
@@ -166,7 +166,7 @@
 
                 <div class="band">
                     <div class="img_name">
-                        <img src="/media/bands/MIW.webp" alt="Photo du groupe Motionless in White">
+                        <img src="/ressources/media/bands/MIW.webp" alt="Photo du groupe Motionless in White">
                         <p>Motionless in White</p>
                     </div>
                     <a href="">Suivis</a>

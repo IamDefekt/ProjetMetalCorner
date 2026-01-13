@@ -12,7 +12,7 @@
 
 
             <div class="nom">
-                <a href="/index.php"><img src="/media/logo2.png" alt="Logo Metal Corner chat"></a>
+                <a href="/index.php"><img src="/ressources/media/logo.png" alt="Logo Metal Corner chat"></a>
                 <div class="titre">
                     <a href="/index.php"><p class="un">Metal</p>
                     <p class="deux">Corner</p></a>
