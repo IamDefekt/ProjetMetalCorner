@@ -226,16 +226,11 @@ body.dark #lune {
 }
 
 
-
 /*  VERSION DESKTOP  */
 
 @media (min-width: 769px ) {
 
-    h1 { font-size: 1.8rem; }
-
-    h2 { font-size: 1.4rem; }
-
-    main { margin: 50px 0;}
+    main { margin: 30px 0;}
 
     #menuBurger { display: none; }
 
@@ -248,7 +243,6 @@ body.dark #lune {
         background-color: var(--mainColor);
         max-height: none;
         display: flex;
-        gap: 40px;
         overflow: visible;
     }
 
@@ -263,7 +257,7 @@ body.dark #lune {
         font-size: 0.9rem;
         width: auto;
         flex-direction: row;
-        gap: 40px;
+        gap: 25px;
     }
 
     nav li a {
@@ -311,13 +305,14 @@ body.dark #lune {
 
     h3 { font-size: 1.3rem; }
 
-    nav ul, nav li {
-        font-size: 1.1rem;
-        gap: 80px;
+    nav {
+        height: 120px;
+        padding: 0 60px;
     }
 
-    nav { 
-        height: 120px;
-        padding: 0 60px; 
+    nav ul, nav li {
+        font-size: 1.1rem;
+        gap: 55px;
     }
+
 }
