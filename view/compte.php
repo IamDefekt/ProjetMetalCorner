@@ -16,45 +16,50 @@
 
         <div class="ancre">
             <h3><a href="#infos">Informations personnelles</a></h3> 
-            <h3 class="ancre_alerte"><a href="#alertes">Mes alertes</a></h3>
-            <h3 class="ancre_event"><a href="#registered_events">évènements enregistrés</a></h3>
+            <h3><a href="#alertes">Mes alertes</a></h3>
+            <h3><a href="#registered_events">évènements enregistrés</a></h3>
         </div>
 
         <span class="sep"></span>
 
-        <div class="infos" id="infos">
-            <div class="pp_pers">
+        <div id="infos">
 
-                <img src="/ressources/media/pp.png" alt="Photo de profil">
+            <h3>Informations personnelles</h3>
 
-                <div class="pers">
-                    <p id="username">Nom d'utilisateur : YOUtopia</p>
-                    <p id="emailAdresse">Adresse email : youtopia@gmail.com</p>
-                    <p>Mot de passe : <a href="#">Modifier</a></p>
+            <div class="infos_perso">
+
+                <div class="pp_pers">
+
+                    <img src="/ressources/media/pp.png" alt="Photo de profil">
+
+                    <div class="pers">
+                        <p id="username">Nom d'utilisateur : YOUtopia</p>
+                        <p id="emailAdresse">Adresse email : youtopia@gmail.com</p>
+                        <p>Mot de passe : <a href="#">Modifier</a></p>
+                    </div>
+
+                </div>    
+                
+                <div class="btns">
+                    <button id="btn1">Modifier le profil</button>
+                    <button id="btn2">supprimer le compte</button>
                 </div>
 
-            </div>    
-            
-            <div class="btns">
-                <button id="btn1">Modifier le profil</button>
-                <button id="btn2">supprimer le compte</button>
-            </div>
+                <div id="popup-container">
+                    <div class="popup-content">
+                        <h3>Voulez-vous vraiment supprimer votre compte ?</h3>
+                        <p>La suppression est définitive.</p>
 
-            <div id="popup-container">
-                <div class="popup-content">
-                    <h3>Voulez-vous vraiment supprimer votre compte ?</h3>
-                    <p>La suppression est définitive.</p>
-
-                    <button class="confirm">Supprimer</button>
-                    <button class="cancel">Annuler</button>
+                        <button class="confirm">Supprimer</button>
+                        <button class="cancel">Annuler</button>
+                    </div>
                 </div>
             </div>
-
         </div>
 
         <span class="sep"></span>
 
-        <div class="alertes" id="alertes">
+        <div id="alertes">
 
             <h3>Mes Alertes</h3>
 
@@ -180,7 +185,7 @@
 
         <span class="sep"></span>
 
-        <div class="registered_events" id="registered_events">
+        <div id="registered_events">
 
             <h3>Mes évènements enregistrés</h3>
 

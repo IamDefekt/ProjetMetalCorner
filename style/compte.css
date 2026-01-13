@@ -1,8 +1,10 @@
 /*  VERSION MOBILE  */
 
-h3 { margin: 30px 0; }
+h1 { margin: 0 0 30px; }
 
-.ancre_alerte, .ancre_event { display: none; }
+#infos h3, #alertes h3, #registered_events h3 { font-weight: bold; }
+
+.ancre { display: none; }
 
 .sep{
     display: block;
@@ -10,21 +12,27 @@ h3 { margin: 30px 0; }
     width: 90%;
     background: linear-gradient(90deg, var(--bgColor) 0%, var(--mainColor) 30%, var(--mainColor) 70%, var(--bgColor) 100%);
     justify-self: center;
+    margin: 20px 0;
 }
 
 
 /*  INFO PERSO  */
 
-.infos {
+#infos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 30px 0;
     gap: 30px;
 }
 
-.infos img {
+.infos_perso {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#infos img {
     width: 125px;
     height: 125px;
     object-fit: cover;
@@ -54,12 +62,12 @@ h3 { margin: 30px 0; }
     gap: 10px;
 }
 
-.btns button {
+.btns button, .band a, .logout a  {
     background-color: var(--mainColor);
     color: var(--txtBlanc);
     text-transform: uppercase;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 7px 10px;
     border-width: 0;
 }
 
@@ -91,7 +99,7 @@ h3 { margin: 30px 0; }
 .popup-content p {
     color: var(--txtBlack);
     font-weight: bold;
-    padding: 0 0 30px;    
+    padding: 20px 0;    
 }
 
 .popup-content button {
@@ -108,17 +116,16 @@ h3 { margin: 30px 0; }
 
 /*  ALERTES  */
 
-.alertes {
+#alertes {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    gap: 30px;
 }
 
 .artistes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     row-gap: 20px;
-    margin: 20px 10px;
     justify-items: center;
 }
 
@@ -136,13 +143,6 @@ h3 { margin: 30px 0; }
     border-radius: 50%;
 }
 
-.band a, .logout a {
-    background: var(--mainColor);
-    color: var(--txtBlanc);
-    border-radius: 5px;
-    padding: 10px 15px;
-}
-
 .logout { 
     text-transform: uppercase;
     justify-self: center;
@@ -158,13 +158,16 @@ h3 { margin: 30px 0; }
 
 /*  EVENTS  */
 
-#registered_events { margin: 30px 0; }
+#registered_events { 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
 .events {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     text-align: center;
-    margin-top: 30px;
     justify-items: center;
 }
 
@@ -194,9 +197,10 @@ h3 { margin: 30px 0; }
 
 @media (min-width: 426px) {
 
-    .infos {
+    .infos_perso { 
         flex-direction: row;
-        gap: 100px;
+        gap: 80px;
+        align-items: center;
     }
 
     .pp_pers{
@@ -213,7 +217,7 @@ h3 { margin: 30px 0; }
 
 
 
-/*  VERSION DESKTOP  */
+/*  VERSION 1024  */
 
 @media (min-width: 769px) {
 
@@ -221,28 +225,34 @@ h3 { margin: 30px 0; }
 
     .ancre {
         display: flex;
+        height: 23px;
         gap: 100px;
         justify-content: center;
     }
 
-    .ancre_alerte, .ancre_event { display: block; }
+    .ancre h3 { font-weight: bold; }
 
-    h3 { font-size: 1.2rem; }
+    #infos h3, #alertes h3, #registered_events h3 { font-weight: normal; }
+
+    h3 { 
+        font-size: 1.2rem;
+        margin: 0;
+    }
 
     .sep { margin: 40px 0; }
 
 
     /*  INFO PERSO  */
 
-    .infos { gap: 200px; }
-
     .infos img {
         width: 125px;
         height: 125px;
     }
 
+    .infos_perso { gap: 100px; }
+
     .pp_pers{
-        gap: 80px;
+        gap: 40px;
         font-size: 1rem;
     }
 
@@ -253,8 +263,7 @@ h3 { margin: 30px 0; }
 
     .btns { gap: 15px; }
 
-    .btns button { font-size: 1rem; }
-
+    .btns button, .band a, .logout a { font-size: 0.9rem; }
 
     /*  ALERTES  */
 
@@ -262,23 +271,17 @@ h3 { margin: 30px 0; }
         grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
         row-gap: 35px;
         column-gap: 20px;
-        margin: 50px 20px;
     }
 
-    .band { width: 450px; }
+    .band { width: 400px; }
 
     .band img {
         width: 60px;
         height: 60px;
     }
 
-    .band a {
-        padding: 6px 15px;
-        font-size: 1rem;
-    }
-
     .img_name {
-        gap: 40px;
+        gap: 20px;
         font-size: 1rem;
     }
 
@@ -295,28 +298,29 @@ h3 { margin: 30px 0; }
 
 
 
-/*  VERSION DESKTOP 1920  */
+/*  VERSION DESKTOP LARGE  */
 
-@media (min-width: 1919px) {
+@media (min-width: 1025px) {
+
+
+    h1 { margin: 0 0 60px;}
 
     h3 { font-size: 1.5rem; }
 
-    .ancre { gap: 200px; }
+    .ancre { gap: 200px;  }
 
     .separateur { margin: 50px 0; }
 
 
     /*  INFO PERSO  */
 
-    .infos {
-        flex-direction: row;
-        gap: 200px;
-    }
 
     .infos img {
         width: 170px;
         height: 170px;
     }
+
+    .infos_perso { gap: 120px; }
 
     .pp_pers{
         flex-direction: row;
@@ -332,20 +336,17 @@ h3 { margin: 30px 0; }
 
     .btns { gap: 15px; }
 
-    .btns button {
-        padding: 10px 15px;
-        font-size: 1.3rem;
+    .btns button, .band a, .logout a {
+        padding: 10px 12px;
+        font-size: 1rem;
     }
+
+    .popup-content p { font-size: 1rem; }
+
+    .popup-content button { font-size: 1rem; }
 
     
     /*  ALERTES  */
-
-    .artistes {
-        grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
-        row-gap: 50px;
-        column-gap: 50px;
-        margin: 50px 120px;
-    }
 
     .band { width: 600px; }
 
@@ -354,10 +355,7 @@ h3 { margin: 30px 0; }
         height: 90px;
     }
 
-    .band a {
-        padding: 6px 15px;
-        font-size: 1.3rem;
-    }
+    .artistes { grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr)); }
 
     .img_name {
         gap: 40px;
@@ -371,4 +369,5 @@ h3 { margin: 30px 0; }
     .show p { font-size: 1.3rem; }
 
 }    
+
 
