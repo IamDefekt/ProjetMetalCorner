@@ -7,7 +7,5 @@ $stmt = $pdo -> query ('SELECT * FROM artiste');
 $results = $stmt -> FetchAll();
 
 foreach ($results as $row) {
-    echo $row['nom'] . "<br>";
-}
-
-?>
+    ?> <span id="csspourmodifierstyle"> <?php echo "{$row['nom']}"; ?> <br>  </span>
+    <?php } ?>
