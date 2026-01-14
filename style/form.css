@@ -7,21 +7,21 @@ form {
 }
 
 form input {
-    width: 310px;
+    width: 300px;
     height: 40px;
     border-radius: 5px;
     background-color: var(--bgColor);
     border : 1px solid var(--txtBlack); 
-    font: 1rem Lato;
+    font-family: Lato;
     padding-left: 10px;
 }
 
 .form input::placeholder { font-size: 0.8rem; }
 
 form label {
-    font-size: 1rem;
+    text-transform: uppercase;
     margin: 15px 0 5px 15px;
-    transform: translatey(13px);
+    transform: translatey(12px);
     background-color: var(--bgColor);
 }
 
@@ -34,7 +34,7 @@ span[id^='error'] {
 }
 
 form textarea {
-    width: 310px;
+    width: 300px;
     height: 150px;
     border-radius: 5px;
     background-color: var(--bgColor);
@@ -42,33 +42,27 @@ form textarea {
     resize: none;
     color: var(--txtBlack); 
     padding: 10px;
-    font: 1rem lato;
+    font-family: lato;
 }
-
-
 
 form button {
     margin-top: 25px;
 }
 
-
 form p {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 15px;
     font-weight: bold;
 }
 
 
 
-/*  VERSION TABLETTE & DESKTOP */
 
 @media (min-width: 769px ) {
 
-    form { margin-top: 30px;}
+    form input { width: 375px; }
 
-    form input { width: 350px; }
-
-    form textarea { width: 350px; }
+    form textarea { width: 375px; }
 
 }
 
