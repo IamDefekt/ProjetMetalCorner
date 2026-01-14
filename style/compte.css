@@ -54,6 +54,20 @@ h1 { margin: 0 0 30px; }
     gap: 10px;
 }
 
+.php {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.php p { font-weight: bold;}
+
+#user, #mail {
+    display: flex;
+    gap: 5px;
+}
+
 .pers a { text-decoration: underline;}
 
 .btns {
@@ -209,6 +223,8 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
         width: 100%;
         padding: 30px;
     }
+
+    .php { align-items: flex-start;}
 }
 
 

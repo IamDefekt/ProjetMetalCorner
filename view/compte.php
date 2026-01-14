@@ -33,8 +33,22 @@
                     <img src="/ressources/media/pp.png" alt="Photo de profil">
 
                     <div class="pers">
-                        <p id="username">Nom d'utilisateur : YOUtopia</p>
-                        <p id="emailAdresse">Adresse email : youtopia@gmail.com</p>
+                        <?php require_once './../ressources/php/connect.php';
+
+                        $c = new Connect();
+                        $pdo = $c->connect();
+                        $stmt = $pdo -> query ('SELECT * FROM membre where membre.pseudo = "youtopia" ');
+                        $results = $stmt -> FetchAll();
+
+                        foreach ($results as $row) {
+                            ?> 
+                            
+                            <div class="php">
+                                <span id="user"> <p>Nom d'utilisateur : </p> <?php echo "{$row['pseudo']}" ?> </span> 
+                                <span id="mail"> <p>Adresse email : </p><?php echo "{$row['email']}"; ?> </span>
+                            </div>
+                        <?php } ?>
+
                         <p>Mot de passe : <a href="#">Modifier</a></p>
                     </div>
 
