@@ -62,7 +62,30 @@ a {
     color: var(--txtBlack); 
 }
 
-a.dark { color: var(--txtBlanc); }
+.btn_red, .btn_white {
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 8px 10px;
+    border-width: 0;
+    font: 0.9rem lato;
+    font-weight: bold;
+}
+
+.btn_red  {
+    background-color: var(--mainColor);
+    color: var(--txtBlanc);
+}
+
+.btn_white {
+    background-color: var(--bgColor);
+    color: var(--txtBlack);
+    align-self: center;
+}
+
+body.dark .btn_white {
+    background-color: var(--txtBlanc);
+    color: var(--txtBlack);
+}
 
 nav a, footer a { color: var(--txtBlanc); }
 
@@ -304,6 +327,11 @@ body.dark #lune {
     h2 { font-size: 1.6rem; }
 
     h3 { font-size: 1.3rem; }
+
+    .btn_red, .btn_white {
+    padding: 10px 12px;
+    font-size: 1rem;
+    }
 
     nav {
         height: 120px;

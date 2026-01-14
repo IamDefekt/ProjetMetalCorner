@@ -24,7 +24,7 @@
                 <label style="width:95px">Mot de passe</label>
                 <input placeholder="Obligatoire" type="password" id="userPw" tabindex="2" required>
 
-                <button id="btn" type="submit"/><a href="/view/compte.php">Se connecter</a></button>
+                <button class="btn_red" id="btn" type="submit"/>Se connecter</button>
             </form>
 
             <div class="reset">

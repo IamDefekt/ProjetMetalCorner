@@ -36,7 +36,7 @@
             <label for="feedback" style="max-width:127px">Un p'tit message ?</label>
             <textarea name="feedback"></textarea>
 
-            <button id="btn" type="button"/>Envoyer</button>
+            <button class="btn_red" id="btn" type="button"/>Envoyer</button>
 
             <p id="message" aria-live="polite"></p>
 

@@ -41,8 +41,8 @@
                 </div>    
                 
                 <div class="btns">
-                    <button id="btn1">Modifier le profil</button>
-                    <button id="btn2">supprimer le compte</button>
+                    <button class="btn_red" id="btn1">Modifier le profil</button>
+                    <button class="btn_red" id="btn2">supprimer le compte</button>
                 </div>
 
                 <div id="popup-container">
@@ -50,8 +50,10 @@
                         <h3>Voulez-vous vraiment supprimer votre compte ?</h3>
                         <p>La suppression est définitive.</p>
 
-                        <button class="confirm">Supprimer</button>
-                        <button class="cancel">Annuler</button>
+                        <div class="popup-btn">
+                            <button class="btn_red confirm">Supprimer</button>
+                            <button class="btn_red cancel">Annuler</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,7 +72,7 @@
                         <img src="/ressources/media/bands/Architects.png" alt="Photo du groupe Architects">
                         <p>Architects</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -78,7 +80,7 @@
                         <img src="/ressources/media/bands/BadOmens.jpg" alt="Photo du groupe Bad Omens">
                         <p>Bad Omens</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -86,7 +88,7 @@
                         <img src="/ressources/media/bands/BlackVeilBrides.jpg" alt="Photo du groupe Black Veil Brides">
                         <p>Black Veil Brides</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -94,7 +96,7 @@
                         <img src="/ressources/media/bands/BMTH2.jpg" alt="Photo du groupe Bring me the Horizon">
                         <p>Bring me the Horizon</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                             <div class="band">
@@ -102,7 +104,7 @@
                         <img src="/ressources/media/bands/Deftones.jpg" alt="Photo du groupe Deftones">
                         <p>Deftones</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -110,7 +112,7 @@
                         <img src="/ressources/media/bands/ElectricCallboy.webp" alt="Photo du groupe Electric Callboy">
                         <p>Electric Callboy</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -118,7 +120,7 @@
                         <img src="/ressources/media/bands/Eisbrecher.jpg" alt="Photo du groupe Eisbrecher">
                         <p>Eisbrecher</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -126,7 +128,7 @@
                         <img src="/ressources/media/bands/FIR.jpg" alt="Photo du groupe Falling in Reverse">
                         <p>Falling in Reverse</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -134,7 +136,7 @@
                         <img src="/ressources/media/bands/korn.jpg" alt="Photo du groupe KoRn">
                         <p>Korn</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -142,7 +144,7 @@
                         <img src="/ressources/media/bands/LinkinPark.jpg" alt="Photo du groupe Linkin Park">
                         <p>Linkin Park</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -150,7 +152,7 @@
                         <img src="/ressources/media/bands/LornaShore.jpg" alt="Photo du groupe Lorna Shore">
                         <p>Lorna Shore</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -158,7 +160,7 @@
                         <img src="/ressources/media/bands/MtS.jpg" alt="Photo du groupe Make them Suffer">
                         <p>Make them Suffer</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -166,7 +168,7 @@
                         <img src="/ressources/media/bands/mm.jpg" alt="Photo du groupe de Marilyn Manson">
                         <p>Marilyn Manson</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -174,7 +176,7 @@
                         <img src="/ressources/media/bands/MIW.webp" alt="Photo du groupe Motionless in White">
                         <p>Motionless in White</p>
                     </div>
-                    <a href="">Suivis</a>
+                    <a class="btn_red" href="">Suivis</a>
                 </div>
 
             </div>
@@ -211,7 +213,7 @@
         </div>
 
         <div class="logout">
-            <a href="/ressources/php/logout.php">Se déconnecter</a>
+            <a class="btn_red" href="/ressources/php/logout.php">Se déconnecter</a>
         </div>
 
     </main>

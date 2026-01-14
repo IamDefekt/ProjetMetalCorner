@@ -36,7 +36,7 @@
 
             </div>
 
-            <a class="btn" href="#">Voir tout les évènements</a>
+            <a class="btn_red" href="#">Voir tout les évènements</a>
 
         </div>
 
@@ -52,7 +52,7 @@
 
         <h3>Un concert ou un festival n'est pas listé ? Dis le nous !</h3>
 
-        <a class="cta_btn" href="/view/form">Proposer un évènement</a>
+        <a class="btn_white" href="/view/form">Proposer un évènement</a>
 
     </section>
         

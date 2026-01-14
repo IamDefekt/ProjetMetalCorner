@@ -48,15 +48,7 @@ form textarea {
 
 
 form button {
-    padding: 10px;
-    border-radius: 5px;
     margin-top: 25px;
-    background-color: var(--mainColor); 
-    border: none;
-    font: 1rem lato;
-    color: var(--txtBlanc); 
-    text-transform: uppercase;
-    cursor: pointer;
 }
 
 

@@ -46,7 +46,7 @@
 
             <span id='errorCgu' aria-live="polite"></span>
 
-            <button id="btn" type="button"/>Créer mon compte</button>
+            <button class="btn_red" id="btn" type="button"/>Créer mon compte</button>
         </form>
 
     </main>    

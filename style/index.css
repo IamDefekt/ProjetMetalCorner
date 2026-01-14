@@ -38,26 +38,21 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+body.dark .show {
+    background-color: var(--mainColor);
+    box-shadow: none;
+}
+
+body.dark .lastAjout {
+    background-color: var(--mainColor);
+    box-shadow: none;
+}
+
 .live { 
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
-.btn {
-    background-color: var(--mainColor);
-    color: var(--txtBlanc);
- }
-
-.btn, .cta_btn {
-    padding: 10px 15px;
-    align-self: center;
-    border-radius: 8px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.cta_btn { background-color: var(--bgColor); }
 
 .cta { 
     height: 135px;
@@ -111,9 +106,6 @@
         height: 160px;
         font-size: 1rem; 
     }
-
-    .btn, .cta_btn {padding: 15px 20px; }
-
     
 
 }
