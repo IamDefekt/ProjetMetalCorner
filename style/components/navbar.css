@@ -118,6 +118,7 @@ header {
     overflow: hidden;
     max-height: 0;
     transition: 0.5s ease;
+    padding-bottom: 60px;
 }
 
 .liste.open {
@@ -190,15 +191,24 @@ nav li a:hover {
     transition: 0.5s ease;
 }
 
-#btn-toggle { 
+#search, #toggle-theme {
     background: none;
     border: none;
-    position: relative;
-    width: 30px;
-    height: 30px;
+    position: absolute;
+    bottom: 12px;
+    right: 65px;    
 }
 
-#btn-toggle svg {
+#search img { width: 30px; }
+
+#toggle-theme { 
+    width: 30px;
+    height: 30px;
+    bottom: 15px;
+    right: 15px;
+}
+
+#toggle-theme svg {
     position: absolute;
     inset: 0;
     margin: auto;
@@ -267,6 +277,9 @@ body.dark #lune {
         max-height: none;
         display: flex;
         overflow: visible;
+        align-items: center;
+        gap: 35px;
+        padding: 0;
     }
 
     nav {
@@ -277,7 +290,6 @@ body.dark #lune {
     .nom img { width: 65px; }
 
     nav ul, nav li {
-        font-size: 0.9rem;
         width: auto;
         flex-direction: row;
         gap: 25px;
@@ -313,6 +325,17 @@ body.dark #lune {
         transform: scaleX(1);
     }
 
+    .search-theme { 
+        display: flex;
+        gap: 15px;
+    }
+
+    #search, #toggle-theme { 
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+
 }
 
 
@@ -320,7 +343,9 @@ body.dark #lune {
 
 @media (min-width: 1025px ) {
 
-    main { margin: 60px 0; }
+    /* nav {background-color: aliceblue;} */
+
+    /* main { margin: 60px 0; }
 
     h1 { font-size: 2rem; }
 
@@ -341,6 +366,6 @@ body.dark #lune {
     nav ul, nav li {
         font-size: 1.1rem;
         gap: 55px;
-    }
+    } */
 
 }
