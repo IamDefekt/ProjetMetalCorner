@@ -32,12 +32,29 @@
                     <li><a href="#">Les concerts</a></li>
                     <li><a href="/view/login.php">Mon compte</a></li>
                     <li><a href="/view/about.php">A propos</a></li>
-                    <li><a href="/view/form.php">Nous contacter</a></li>
+                    <li><a href="/view/form.php">Contact</a></li>
                 </ul>
 
                 <div class="search-theme">
 
-                    <button id="search"><img src="/ressources/media/icons8-loupe.svg"  alt=""></button>
+                    <button id="search">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#efefef"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            >
+                            <circle cx="10.5" cy="10.5" r="6.8" />
+                            <path d="M15.8 15.8 L21 21" />
+                        </svg>
+
+                    </button>
                 
                     <button id="toggle-theme" aria-label="Changer le thème">                        
                     <!-- LUNE -->
