@@ -24,7 +24,10 @@ $pdo = $connect->connect();
 $errors = [];
 
 // Inscription
-if ($confirmPassword !== '' || $email !== '') {
+
+$action = $_POST['action'] ?? '';
+
+if ($action === 'signup' ) { 
 
     if (!$username) {
         $errors['username'] = "Veuillez saisir un nom d'utilisateur.";
@@ -82,14 +85,26 @@ if ($confirmPassword !== '' || $email !== '') {
     exit;
 }
 
-// Connexion
-if ($username && $password) {
-    $stmt = $pdo->prepare("SELECT * FROM membre WHERE pseudo = :pseudo");
-    $stmt->bindParam(':pseudo', $username);
+elseif ( $action === 'login') {
+
+    $loginEmail = trim($_POST['loginEmail'] ?? '');
+    $loginPw    = trim($_POST['loginPw'] ?? '');
+
+    // Connexion
+    if (!$loginEmail || !$loginPw) {
+        echo json_encode([
+            'success' => false,
+            'errors' => ['global' => 'Adresse email et mot de passe requis.']
+        ]);
+        exit;
+    }
+
+    $stmt = $pdo->prepare("SELECT * FROM membre WHERE email = :email");
+    $stmt->bindParam(':email', $loginEmail);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($password, $user['mdp'])) {
+    if ($user && password_verify($loginPw, $user['mdp'])) {
         $_SESSION['user'] = [
             'id'     => $user['idUser'],
             'pseudo' => $user['pseudo'],
@@ -108,10 +123,12 @@ if ($username && $password) {
         ]);
         exit;
     }
-}
 
-echo json_encode([
-    'success' => false,
-    'errors' => ['global' => 'Requête invalide.']
-]);
-exit;
+} else { 
+
+    echo json_encode([
+        'success' => false,
+        'errors' => ['global' => 'Requête invalide.']
+    ]);
+    exit;
+}

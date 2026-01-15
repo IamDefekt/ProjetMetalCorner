@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Métal Corner - Se connecter</title>
     <link rel="stylesheet" href="/style/login.css">
+    <script src="/ressources/scripts/formSignInUp.js" defer></script>
 </head>
 <body>
 
@@ -16,15 +17,17 @@
 
         <div class="form">
     
-            <form method="POST" action="/ressources/php/requete.php" id="connexionUser">
+            <form method="POST" action="/ressources/php/requete.php" id="login">
 
                 <label style="width:101px">Adresse email</label>
-                <input placeholder="Obligatoire" type="email" name="email" id="emailAdress" tabindex="1" required> 
+                <input placeholder="Obligatoire" type="email" name="loginEmail" id="loginEmail" tabindex="1" required> 
+
+                <span id="errorLogin"></span>
 
                 <label style="width:95px">Mot de passe</label>
-                <input placeholder="Obligatoire" type="password" name="password" id="userPw" tabindex="2" required>
+                <input placeholder="Obligatoire" type="password" name="loginPw" id="loginPw" tabindex="2" required>
 
-                <button class="btn_red" id="btn" type="submit"/>Se connecter</button>
+                <button class="btn_red" type="submit">Se connecter</button>
             </form>
 
             <div class="reset">

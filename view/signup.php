@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Métal Corner - Créer mon compte</title>
     <link rel="stylesheet" href="/style/signup.css">
-    <script src="/ressources/scripts/creationUser.js" defer></script>
+    <script src="/ressources/scripts/formSignInUp.js" defer></script>
 </head>
 <body>
 
@@ -18,17 +18,17 @@
         <form method="POST" action="/ressources/php/requete.php" id="createAccount">
 
             <label for="name" style="width:125px">Nom d'utilisateur</label>
-            <input placeholder="Obligatoire" type="text" name="username" id="username" tabindex="1"> 
+            <input placeholder="Obligatoire" type="text" name="username" id="createUser" tabindex="1"> 
 
             <span id='errorUsername'></span>
 
             <label for="email" style="width:101px">Adresse email</label>
-            <input placeholder="Obligatoire" type="email" name="email" id="emailAdress" tabindex="2"> 
+            <input placeholder="Obligatoire" type="email" name="email" id="createEmail" tabindex="2"> 
 
             <span id='errorMail' aria-live="polite"></span>
 
             <label for="password" style="width:95px">Mot de passe</label>
-            <input placeholder="Obligatoire" type="password" name="password" id="userPw" tabindex="3">
+            <input placeholder="Obligatoire" type="password" name="password" id="createPW" tabindex="3">
 
             <span id='errorPw' aria-live="polite"></span>
 
@@ -44,7 +44,7 @@
 
             <span id='errorCgu' aria-live="polite"></span>
 
-            <button class="btn_red" id="btn" type="submit">Créer mon compte</button>
+            <button class="btn_red" type="submit">Créer mon compte</button>
 
             <span id='errorForm' aria-live="polite"></span>
         </form>
