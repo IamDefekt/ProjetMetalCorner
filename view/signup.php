@@ -13,29 +13,27 @@
 
     <main>
 
-        <!-- <h1 class="title"><span>Créer</span> mon compte<span style="visibility:hidden;">text</span></h1> -->
-
         <h1>Créer mon compte</h1>
 
-        <form id="createAccount">
+        <form method="POST" action="/ressources/php/requete.php" id="createAccount">
 
             <label for="name" style="width:125px">Nom d'utilisateur</label>
-            <input placeholder="Obligatoire" type="username" id="username" tabindex="1" required> 
+            <input placeholder="Obligatoire" type="text" name="username" id="username" tabindex="1"> 
 
             <span id='errorUsername'></span>
 
             <label for="email" style="width:101px">Adresse email</label>
-            <input placeholder="Obligatoire" type="email" id="emailAdress" tabindex="2" required> 
+            <input placeholder="Obligatoire" type="email" name="email" id="emailAdress" tabindex="2"> 
 
             <span id='errorMail' aria-live="polite"></span>
 
             <label for="password" style="width:95px">Mot de passe</label>
-            <input placeholder="Obligatoire" type="password" id="userPw" tabindex="3" required>
+            <input placeholder="Obligatoire" type="password" name="password" id="userPw" tabindex="3">
 
             <span id='errorPw' aria-live="polite"></span>
 
             <label for="password" style="width:186px">Confirmer le mot de passe</label>
-            <input placeholder="Obligatoire" type="password" id="confirmPW" tabindex="4" required>
+            <input placeholder="Obligatoire" type="password" name="password2" id="confirmPW" tabindex="4">
 
             <span id='errorPw2' aria-live="polite"></span>
 
@@ -46,7 +44,9 @@
 
             <span id='errorCgu' aria-live="polite"></span>
 
-            <button class="btn_red" id="btn" type="button"/>Créer mon compte</button>
+            <button class="btn_red" id="btn" type="submit">Créer mon compte</button>
+
+            <span id='errorForm' aria-live="polite"></span>
         </form>
 
     </main>    

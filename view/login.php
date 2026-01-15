@@ -16,13 +16,13 @@
 
         <div class="form">
     
-            <form id="connexionUser">
+            <form method="POST" action="/ressources/php/requete.php" id="connexionUser">
 
                 <label style="width:101px">Adresse email</label>
-                <input placeholder="Obligatoire" type="email" id="emailAdress" tabindex="1" required> 
+                <input placeholder="Obligatoire" type="email" name="email" id="emailAdress" tabindex="1" required> 
 
                 <label style="width:95px">Mot de passe</label>
-                <input placeholder="Obligatoire" type="password" id="userPw" tabindex="2" required>
+                <input placeholder="Obligatoire" type="password" name="password" id="userPw" tabindex="2" required>
 
                 <button class="btn_red" id="btn" type="submit"/>Se connecter</button>
             </form>
@@ -31,9 +31,15 @@
                 <a href="#">Mot de passe oublié ?</a>
             </div>
 
-                <div class="signin">
+            <div class="signin">
                 <a href="/view/signup.php">Vous n'avez pas encore de compte ?</a>
             </div>
+
+            <?php
+            if (isset($_GET['success']) && $_GET['success'] == 1) {
+                echo '<p class="error">Votre compte a été créé avec succès !</p>';
+            } ?>
+
         </div>
     </main>        
         

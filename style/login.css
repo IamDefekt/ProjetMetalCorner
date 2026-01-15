@@ -48,6 +48,11 @@ form button {
 
 .reset, .signin { text-decoration: underline; }
 
+.error {
+    text-align: center;
+    color: green;
+}
+
 
 
 /*  VERSION DESKTOP */
