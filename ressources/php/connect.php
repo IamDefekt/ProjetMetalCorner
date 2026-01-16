@@ -28,5 +28,4 @@ class Connect {
         die('Erreur connexion BDD : ' . $e->getMessage());
         }
     }
-
 }

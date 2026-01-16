@@ -86,7 +86,7 @@
                         <img src="/ressources/media/bands/Architects.png" alt="Photo du groupe Architects">
                         <p>Architects</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -94,7 +94,7 @@
                         <img src="/ressources/media/bands/BadOmens.jpg" alt="Photo du groupe Bad Omens">
                         <p>Bad Omens</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red"  id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -102,7 +102,7 @@
                         <img src="/ressources/media/bands/BlackVeilBrides.jpg" alt="Photo du groupe Black Veil Brides">
                         <p>Black Veil Brides</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red"  id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -110,7 +110,7 @@
                         <img src="/ressources/media/bands/BMTH2.jpg" alt="Photo du groupe Bring me the Horizon">
                         <p>Bring me the Horizon</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow"  href="">Suivis</a>
                 </div>
 
                             <div class="band">
@@ -118,7 +118,7 @@
                         <img src="/ressources/media/bands/Deftones.jpg" alt="Photo du groupe Deftones">
                         <p>Deftones</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -126,7 +126,7 @@
                         <img src="/ressources/media/bands/ElectricCallboy.webp" alt="Photo du groupe Electric Callboy">
                         <p>Electric Callboy</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -134,7 +134,7 @@
                         <img src="/ressources/media/bands/Eisbrecher.jpg" alt="Photo du groupe Eisbrecher">
                         <p>Eisbrecher</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -142,7 +142,7 @@
                         <img src="/ressources/media/bands/FIR.jpg" alt="Photo du groupe Falling in Reverse">
                         <p>Falling in Reverse</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -150,7 +150,7 @@
                         <img src="/ressources/media/bands/korn.jpg" alt="Photo du groupe KoRn">
                         <p>Korn</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -158,7 +158,7 @@
                         <img src="/ressources/media/bands/LinkinPark.jpg" alt="Photo du groupe Linkin Park">
                         <p>Linkin Park</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -166,7 +166,7 @@
                         <img src="/ressources/media/bands/LornaShore.jpg" alt="Photo du groupe Lorna Shore">
                         <p>Lorna Shore</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -174,7 +174,7 @@
                         <img src="/ressources/media/bands/MtS.jpg" alt="Photo du groupe Make them Suffer">
                         <p>Make them Suffer</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -182,7 +182,7 @@
                         <img src="/ressources/media/bands/mm.jpg" alt="Photo du groupe de Marilyn Manson">
                         <p>Marilyn Manson</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
                 <div class="band">
@@ -190,7 +190,7 @@
                         <img src="/ressources/media/bands/MIW.webp" alt="Photo du groupe Motionless in White">
                         <p>Motionless in White</p>
                     </div>
-                    <a class="btn_red" href="">Suivis</a>
+                    <a class="btn_red" id="follow" href="">Suivis</a>
                 </div>
 
             </div>

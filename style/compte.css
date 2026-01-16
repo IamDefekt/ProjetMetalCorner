@@ -246,15 +246,7 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
 
     #infos h3, #alertes h3, #registered_events h3 { font-weight: normal; }
 
-    h3 { 
-        font-size: 1.2rem;
-        margin: 0;
-    }
-
     .sep { margin: 40px 0; }
-
-
-    /*  INFO PERSO  */
 
     .infos img {
         width: 125px;
@@ -265,7 +257,7 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
 
     .pp_pers{
         gap: 40px;
-        font-size: 1rem;
+        font-size: 1rem
     }
 
     .pers {
@@ -274,31 +266,22 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
     }
 
     .btns { gap: 15px; }
-
-    .btn_red { font-size: 0.9rem; }
-
-    /*  ALERTES  */
-
-    .artistes {
-        grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
-        row-gap: 35px;
-        column-gap: 20px;
-    }
+  
+    .artistes { grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr)); }
 
     .band { width: 400px; }
+
+    #follow { text-transform: none; }
 
     .band img {
         width: 60px;
         height: 60px;
     }
 
-    .img_name {
+    .img_name { 
         gap: 20px;
         font-size: 1rem;
     }
-
-
-    /*  EVENEMENTS ENREGISTRES  */
 
     .events { grid-template-columns: repeat(auto-fill, minmax(31rem, 1fr)); }
 
@@ -310,76 +293,6 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
 
 
 
-/*  VERSION DESKTOP LARGE  */
 
-@media (min-width: 1025px) {
-
-
-    h1 { margin: 0 0 60px;}
-
-    h3 { font-size: 1.5rem; }
-
-    .ancre { gap: 200px;  }
-
-    .separateur { margin: 50px 0; }
-
-
-    /*  INFO PERSO  */
-
-
-    .infos img {
-        width: 170px;
-        height: 170px;
-    }
-
-    .infos_perso { gap: 120px; }
-
-    .pp_pers{
-        flex-direction: row;
-        gap: 80px;
-        text-align: left;
-        font-size: 1.3rem;
-    }
-
-    .pers {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btns { gap: 15px; }
-
-    .btn_red {
-        padding: 10px 12px;
-        font-size: 1rem;
-    }
-
-    .popup-content p { font-size: 1rem; }
-
-    .popup-content button { font-size: 1rem; }
-
-    
-    /*  ALERTES  */
-
-    .band { width: 600px; }
-
-    .band img {
-        width: 90px;
-        height: 90px;
-    }
-
-    .artistes { grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr)); }
-
-    .img_name {
-        gap: 40px;
-        font-size: 1.3rem;
-    }
-
-    .events { grid-template-columns: repeat(auto-fill, minmax(41rem, 1fr)); }
-
-    .show { width: 550px; }
-
-    .show p { font-size: 1.3rem; }
-
-}    
 
 

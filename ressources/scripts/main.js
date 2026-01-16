@@ -42,73 +42,73 @@ toggleBtn.addEventListener("click", () => {
 
 //  -------------- INDEX (HOME) --------------
 
-const prev = document.getElementById('prev');
-const next = document.getElementById('next');
-const carousel = document.getElementById('carousel');
-const slide = document.querySelectorAll('.slide');
+// const prev = document.getElementById('prev');
+// const next = document.getElementById('next');
+// const carousel = document.getElementById('carousel');
+// const slide = document.querySelectorAll('.slide');
 
-let index = 0;
-let startX = 0;
-let currentX = 0;
-let isDragging = false;
+// let index = 0;
+// let startX = 0;
+// let currentX = 0;
+// let isDragging = false;
 
-const gap = 50;
-const slideWidth = slides[0].offsetWidth + gap;
-const threshold = 50; 
+// const gap = 50;
+// const slideWidth = slides[0].offsetWidth + gap;
+// const threshold = 50; 
 
-function updateCarousel() {
-    carousel.style.transition = 'transform 0.4s ease';
-    carousel.style.transform = `translateX(-${index * slideWidth}px)`;
-}
+// function updateCarousel() {
+//     carousel.style.transition = 'transform 0.4s ease';
+//     carousel.style.transform = `translateX(-${index * slideWidth}px)`;
+// }
 
-next.addEventListener('click', () => {
-    index = (index + 1) % slides.length;
-    updateCarousel();
-});
+// next.addEventListener('click', () => {
+//     index = (index + 1) % slides.length;
+//     updateCarousel();
+// });
 
-prev.addEventListener('click', () => {
-    index = (index - 1 + slides.length) % slides.length;
-    updateCarousel();
-});
+// prev.addEventListener('click', () => {
+//     index = (index - 1 + slides.length) % slides.length;
+//     updateCarousel();
+// });
 
-carousel.addEventListener('pointerdown', (e) => {
-    startX = e.clientX;
-    isDragging = true;
-    carousel.style.transition = 'none';
-});
+// carousel.addEventListener('pointerdown', (e) => {
+//     startX = e.clientX;
+//     isDragging = true;
+//     carousel.style.transition = 'none';
+// });
 
-carousel.addEventListener('pointermove', (e) => {
-    if (!isDragging) return;
+// carousel.addEventListener('pointermove', (e) => {
+//     if (!isDragging) return;
 
-    currentX = e.clientX;
-    const delta = currentX - startX;
+//     currentX = e.clientX;
+//     const delta = currentX - startX;
 
-    carousel.style.transform =
-        `translateX(${-(index * slideWidth) + delta}px)`;
-});
+//     carousel.style.transform =
+//         `translateX(${-(index * slideWidth) + delta}px)`;
+// });
 
-carousel.addEventListener('pointerup', () => {
-    if (!isDragging) return;
+// carousel.addEventListener('pointerup', () => {
+//     if (!isDragging) return;
 
-    const delta = currentX - startX;
+//     const delta = currentX - startX;
 
-    if (Math.abs(delta) > threshold) {
-        if (delta < 0) {
-            index = (index + 1) % slides.length;
-        } else {
-            index = (index - 1 + slides.length) % slides.length;
-        }
-    }
+//     if (Math.abs(delta) > threshold) {
+//         if (delta < 0) {
+//             index = (index + 1) % slides.length;
+//         } else {
+//             index = (index - 1 + slides.length) % slides.length;
+//         }
+//     }
 
-    isDragging = false;
-    updateCarousel();
-});
+//     isDragging = false;
+//     updateCarousel();
+// });
 
-carousel.addEventListener('pointerleave', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    updateCarousel();
-});
+// carousel.addEventListener('pointerleave', () => {
+//     if (!isDragging) return;
+//     isDragging = false;
+//     updateCarousel();
+// });
 
 
 
