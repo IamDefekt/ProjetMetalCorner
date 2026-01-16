@@ -235,6 +235,40 @@
         
     <?php include __DIR__ . '/components/footer.php'; ?>
 
+    <script>
+
+        // MODIF PASSWORD
+
+        // SUPPRESSION COMPTE
+
+        const popup = document.getElementById('popup-container');
+        const deletebtn = document.getElementById('btn2');
+        const confirmbtn = document.querySelector('.confirm');
+        const cancelbtn = document.querySelector('.cancel');
+
+        deletebtn.addEventListener('click', () => {
+        popup.classList.add('open');
+        });
+
+        cancelbtn.addEventListener('click', () => {
+        popup.classList.remove('open');
+        });
+
+        confirmbtn.addEventListener('click', () => {
+        window.location.href = 'suppression.php';
+        })
+
+
+        // ANIMATION FAVORIS 
+
+        const heart = document.querySelector("#heart path");
+
+        heart.addEventListener('click', () => {
+          heart.classList.toggle('liked');
+        });
+
+    </script>
+
 </body>
 </html>
 
