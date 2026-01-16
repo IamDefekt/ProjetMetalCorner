@@ -204,6 +204,18 @@ nav li a:hover {
     height: 25px;
 }
 
+#search-container {
+    display: none;
+}
+
+#search-container.open {
+    display: block;
+    position: absolute;
+    bottom: -355px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 #toggle-theme { 
     background-color: var(--txtBlanc);
     border-radius: 50%;

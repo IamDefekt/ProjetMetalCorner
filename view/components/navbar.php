@@ -53,7 +53,6 @@
                             <circle cx="10.5" cy="10.5" r="6.8" />
                             <path d="M15.8 15.8 L21 21" />
                         </svg>
-
                     </button>
                 
                     <button id="toggle-theme" aria-label="Changer le thème">                        
@@ -76,6 +75,10 @@
 
                 </div>
                 
+            </div>
+
+            <div id="search-container">
+                <input placeholder="Chercher un artiste" type="search" >
             </div>
         </nav>
     </header>

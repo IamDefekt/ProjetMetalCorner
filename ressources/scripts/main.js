@@ -15,10 +15,10 @@ burger.addEventListener('click', () => {
 // SEARCH BAR
 
 const loupe = document.getElementById('search');
-const popupsearchbar = document.getElementById('search-container');
+const recherche = document.getElementById('search-container');
 
 loupe.addEventListener('click', () => {
-  popupsearchbar.classList.add('open');
+  recherche.classList.toggle('open');
 })
 
 
