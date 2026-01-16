@@ -50,8 +50,6 @@ form button {
 
 @media (min-width: 769px ) {
 
-    form { margin-top: 30px; }
-
     form input { width: 350px; }
 
     .cgu { 

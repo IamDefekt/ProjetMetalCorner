@@ -29,11 +29,3 @@ footer {
     footer { padding: 0 30px; }   
     
 }
-
-@media (min-width: 1025px ) {
-
-    footer { 
-        height: 120px;
-        padding: 0 60px;
-    }
-}

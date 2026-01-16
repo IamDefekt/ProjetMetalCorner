@@ -1,5 +1,3 @@
-/*  VERSION MOBILE  */
-
 form {
     display: flex;
     flex-direction: column;
@@ -21,7 +19,7 @@ form input {
 form label {
     text-transform: uppercase;
     margin: 15px 0 5px 15px;
-    transform: translatey(12px);
+    transform: translatey(13px);
     background-color: var(--bgColor);
 }
 

@@ -12,7 +12,7 @@ form {
 }
 
 form input {
-    width: 310px;
+    width: 300px;
     height: 40px;
     border-radius: 5px;
     background-color: var(--bgColor);
@@ -60,8 +60,6 @@ form button {
 @media (min-width: 769px ) {
 
     .form, form input { width: 350px; }
-
-    form { margin-top: 30px; }
 
     .reset, .signin { font-size: 1rem; }
 

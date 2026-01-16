@@ -52,7 +52,7 @@
 
         <h3>Un concert ou un festival n'est pas listé ? Dis le nous !</h3>
 
-        <a class="btn_white" href="/view/form">Proposer un évènement</a>
+        <a class="btn_white" href="/view/form.php">Proposer un évènement</a>
 
     </section>
         
