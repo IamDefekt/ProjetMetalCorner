@@ -30,7 +30,12 @@
         </div>
 
         <div class="interactions">
-            <p>Ajouter à mes évènements</p>
+            <div class="like">
+                <p>Ajouter à mes évènements</p>
+                <input type="checkbox" id="heart">
+                <label for="heart">&#10084</label>
+            </div>
+                
             <p>Ajouter à mon calendrier</p>
         </div>
 
