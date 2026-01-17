@@ -54,6 +54,10 @@
                             <path d="M15.8 15.8 L21 21" />
                         </svg>
                     </button>
+
+                    <div id="search-container">
+                        <input placeholder="Chercher un artiste" type="search" >
+                    </div>
                 
                     <button id="toggle-theme" aria-label="Changer le thème">                        
                     <!-- LUNE -->
@@ -77,9 +81,6 @@
                 
             </div>
 
-            <div id="search-container">
-                <input placeholder="Chercher un artiste" type="search" >
-            </div>
         </nav>
     </header>
 

@@ -211,9 +211,15 @@ nav li a:hover {
 #search-container.open {
     display: block;
     position: absolute;
-    bottom: -355px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 15px;
+    left: 15px;
+}
+
+#search-container input {
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
 }
 
 #toggle-theme { 
@@ -330,6 +336,18 @@ body.dark #lune {
     }
 
     .search-theme button { position: relative; }
+
+    #search-container.open {
+        bottom: -17%;
+        right: 0;
+        left: auto;
+        transform: translatey(50%);
+    }
+
+    #search-container input {
+        width: 250px;
+        height: 35px;
+    }
 
     #search, #toggle-theme { 
         position: relative;

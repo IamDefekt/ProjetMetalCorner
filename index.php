@@ -44,13 +44,23 @@
 
             <h2>Derniers évènements ajoutés</h2>
 
+            <div class="live">
+
+                <a href="#">20/01 - Electric Callboy @LDLC Arena</a>
+                <a href="">12/03 - Gojira @Groupama Stadium</a>
+                <a href="">18/03 - Amenra @Rock'n'Eat</a>
+                <a href="">22/03 - Loudblast @Radiant</a>
+                <a href="">25/03 - Perturbator @Ninkasi Kao</a>
+
+            </div>
+
         </div>
 
     </section>
 
     <section class="cta">
 
-        <h3>Un concert ou un festival n'est pas listé ? Dis le nous !</h3>
+        <h3>Un concert ou un festival n'est pas listé ? Dis-le nous !</h3>
 
         <a class="btn_white" href="/view/form.php">Proposer un évènement</a>
 
