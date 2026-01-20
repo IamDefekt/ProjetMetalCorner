@@ -31,14 +31,14 @@ class ConfigDB {
         $this -> port = $config['port'];
     }
 
-    //getters
+//------------------------Getter------------------------
 
-    public function getHost() { return $this -> host; }
-    public function getPort() { return $this -> port; }
-    public function getDB() { return $this -> db; }
-    public function getUser() { return $this -> user; }
-    public function getMdp() { return $this -> mdp; }
-    public function getCharset() { return $this -> charset; }
+    public function getHost()       { return $this -> host; }
+    public function getPort()       { return $this -> port; }
+    public function getDB()         { return $this -> db; }
+    public function getUser()       { return $this -> user; }
+    public function getMdp()        { return $this -> mdp; }
+    public function getCharset()    { return $this -> charset; }
     
 }
 

@@ -23,7 +23,7 @@ $pdo = $connect->connect();
 
 $errors = [];
 
-// Inscription
+// ----------- INSCRIPTION -----------
 
 $action = $_POST['action'] ?? '';
 
@@ -67,7 +67,7 @@ if ($action === 'signup' ) {
         exit;
     }
 
-    // Création du compte
+    // ----------- CREATION DU COMPTE -----------
     $mdpHash = password_hash($password, PASSWORD_DEFAULT);
     $insert = $pdo->prepare(
         "INSERT INTO membre (pseudo, mdp, email, dateInscription)
@@ -84,6 +84,8 @@ if ($action === 'signup' ) {
     ]);
     exit;
 }
+
+// ----------- CONNEXION -----------
 
 elseif ( $action === 'login') {
 
