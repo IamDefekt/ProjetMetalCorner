@@ -1,6 +1,6 @@
 <?php
 
-class EntiteMembre {
+class entiteMembre {
     private int $id;
     private string $pseudo; 
     private string $mdp;

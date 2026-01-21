@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/entitesMembres';
+require_once __DIR__ . '/entiteMembre';
 require_once __DIR__ . '/connect.php';
 
 class DAOMembre {
@@ -20,7 +20,7 @@ class DAOMembre {
             throw new PDOException ('Erreur de connexion à la base de données', 0, $e);
         }
         while ($ligne = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $membre = new EntiteMembre();
+            $membre = new entiteMembre();
 
             $membre->SetID($ligne['id']);
             $membre->SetPseudo($ligne['pseudo']);
@@ -37,7 +37,7 @@ class DAOMembre {
 
     public function selectMembrebyPseudo(string $pseudo, string $email):array {
         $membres = [];
-        $sql = 'SELECT * FROM membre WHERE pseudo LIKE :pseudo AND email LIKE :email;'
+        $sql = 'SELECT * FROM membre WHERE pseudo LIKE :pseudo AND email LIKE :email;';
 
         try {
             $stmt = $this->pdo-prepare($sql);
@@ -48,7 +48,7 @@ class DAOMembre {
             throw new PDOException ('Erreur de connexion à la base de données', 0, $e);
         }
         while ($ligne = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $membre = new EntiteMembre();
+            $membre = new entiteMembre();
 
             $membre->setID($ligne['id']);
             $membre->setPseudo($ligne['pseudo']);
@@ -63,7 +63,7 @@ class DAOMembre {
 
 // ----------- FONCTION POUR INSERER MEMBRER DANS BDD -----------
 
-    public function insertData(EntiteMembre $membre):bool {
+    public function insertData(entiteMembre $membre):bool {
         $sql = "
             INSERT INTO membres 
             (pseudo, email, mdp, dateInscription)
@@ -87,7 +87,7 @@ class DAOMembre {
 
 // ----------- FONCTION POUR MODIFIER MEMBRE DANS BDD -----------
 
-    public function updateData (EntiteMembre $membre);bool {
+    public function updateData (entiteMembre $membre):bool {
         $sql = "
             UPDATE membres SET
             pseudo = :pseudo,
