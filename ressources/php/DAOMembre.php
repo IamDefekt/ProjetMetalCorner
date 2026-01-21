@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/entiteMembre';
+require_once __DIR__ . '/entiteMembre.php';
 require_once __DIR__ . '/connect.php';
 
 class DAOMembre {
@@ -22,20 +22,20 @@ class DAOMembre {
         while ($ligne = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $membre = new entiteMembre();
 
-            $membre->SetID($ligne['id']);
+            $membre->SetidUser($ligne['idUser']);
             $membre->SetPseudo($ligne['pseudo']);
             $membre->SetEmail($ligne['email']);
             $membre->SetMdp($ligne['mdp']);
             $membre->SetDateInscription($ligne['dateInscription']);
 
-            $membres[] = $joueur;
+            $membres[] = $membre;
         }
-        return $joueurs;
+        return $membres;
     }
 
-// ----------- FONCTION POUR SELECTIONNER MEMBRE PAR SON PSEUDO -----------
+// ----------- FONCTION POUR SELECTIONNER MEMBRE PAR SON EMAIL -----------
 
-    public function selectMembrebyPseudo(string $pseudo, string $email):array {
+    public function selectMembrebyEmail(string $pseudo, string $email):array {
         $membres = [];
         $sql = 'SELECT * FROM membre WHERE pseudo LIKE :pseudo AND email LIKE :email;';
 
@@ -50,7 +50,7 @@ class DAOMembre {
         while ($ligne = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $membre = new entiteMembre();
 
-            $membre->setID($ligne['id']);
+            $membre->setidUser($ligne['idUser']);
             $membre->setPseudo($ligne['pseudo']);
             $membre->setEmail($ligne['email']);
             $membre->setMdp($ligne['mdp']);
@@ -94,13 +94,13 @@ class DAOMembre {
             email = :email;
             mdp = :mdp;
             dateInscription = :dateInscription
-            WHERE idMembre = :id;
+            WHERE idUser = :idUser;
         ";
 
         try {
             $stmt = $this->pdo->prepare($sql);
             return $stmt->execute([
-                ':id'               => (int)$membre->getID(),
+                ':idUser'           => (int)$membre->getidUser(),
                 ':pseudo'           => $membre->getPseudo(),
                 ':email'            => $membre->getEmail(),
                 ':mdp'              => $membre->getMdp(),

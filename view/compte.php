@@ -33,7 +33,7 @@
                     <img src="/ressources/media/pp.png" alt="Photo de profil">
 
                     <div class="pers">
-                        <?php require_once './../ressources/php/connect.php';
+                        <?php require_once './../ressources/php/DAOMembre.php';
 
                         $c = new Connect();
                         $pdo = $c->connect();
@@ -48,8 +48,6 @@
                                 <span id="mail"> <p>Adresse email : </p><?php echo "{$row['email']}"; ?> </span>
                             </div>
                         <?php } ?>
-
-                        <p>Mot de passe : <a href="#">Modifier</a></p>
                     </div>
 
                 </div>    
