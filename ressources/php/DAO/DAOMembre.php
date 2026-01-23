@@ -19,7 +19,7 @@ class DAOMembre {
 
         try {
             $stmt = $this->pdo-prepare($sql);
-            $stmt->execute([":pseudo" => $pseudo, ":email" => $email]);
+            $stmt->execute([":pseudo" => $pseudo]);
 
             while ($ligne = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $membre = new entiteMembre();
@@ -42,14 +42,14 @@ class DAOMembre {
 // ----------- SELECTIONNER USER BY ID -----------
 
     public function selectMembreById(int $idUser): entiteMembre {
-            $sql = "SELECT * FROM membre WHERE idJoueur = :id";
+            $sql = "SELECT * FROM membre WHERE idUser = :idUser";
 
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([':idUser' => $idUser]);
 
             $ligne = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $membre = new entiteJoueur();
+            $membre = new entiteMembre();
             $membre->setidUser($ligne['idUser']);
             $membre->setPseudo($ligne['pseudo']);
             $membre->setMdp($ligne['mdp']);
@@ -87,7 +87,7 @@ class DAOMembre {
 
     public function updateData (entiteMembre $membre):bool {
         $sql = "
-            UPDATE membres SET
+            UPDATE membre SET
             pseudo = :pseudo,
             email = :email;
             mdp = :mdp;
@@ -116,14 +116,12 @@ class DAOMembre {
     public function deleteData (entiteMembre $membre): bool {
         $sql='
         DELETE FROM membre
-        WHERE pseudo = :pseudo;
+        WHERE idUser = :idUser;
         ';
 
         try {
             $stmt = $this->pdo->prepare($sql);
-            return $stmt->execute([
-                ':pseudo' => $membre->getPseudo()
-            ]);           
+            return $stmt->execute([ ':idUser' => $membre->getidUser() ]);           
         } catch(PDOException $e) {
             throw new PDOException("Erreur de suppression dans la base de données", 0, $e);
         }
