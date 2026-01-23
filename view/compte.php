@@ -37,17 +37,15 @@
 
                         $c = new Connect();
                         $pdo = $c->connect();
-                        $stmt = $pdo -> query ('SELECT * FROM membre where membre.pseudo = "youtopia" ');
-                        $results = $stmt -> FetchAll();
-
-                        foreach ($results as $row) {
-                            ?> 
+                        $stmt = $pdo -> query ('SELECT pseudo FROM membre WHERE mdp = :mdp AND email = :email ');
+                        $stmt=$pdo->prepare($sql);
+                        $stmt->execute([":email" => $email, ":mdp" => $mdp]);
+                        $membre = $stmt->fetchAll(PDO::FETCH_ASSOC); ?> 
                             
                             <div class="php">
-                                <span id="user"> <p>Nom d'utilisateur : </p> <?php echo "{$row['pseudo']}" ?> </span> 
-                                <span id="mail"> <p>Adresse email : </p><?php echo "{$row['email']}"; ?> </span>
+                                <span id="user"> <p>Nom d'utilisateur : </p> <?php  ?> </span> 
+                                <span id="mail"> <p>Adresse email : </p><?php echo $membre; ?> </span>
                             </div>
-                        <?php } ?>
                     </div>
 
                 </div>    
