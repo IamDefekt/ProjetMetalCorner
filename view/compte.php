@@ -38,19 +38,11 @@
                         require_once __DIR__ . '/../ressources/php/DAO/DAOmembre.php';
                         require_once __DIR__ . '/../ressources/php/controller/Tools.php';
 
-                        $c = new Connect();
-                        $pdo = $c->connect();
-                        $stmt = $pdo -> query ('SELECT * FROM membre where membre.pseudo = "youtopia" ');
-                        $results = $stmt -> FetchAll();
+                        
+                        ?>
 
-                        foreach ($results as $row) {
-                            ?> 
-                            
-                            <div class="php">
-                                <span id="user"> <p>Nom d'utilisateur : </p> <?php echo "{$row['pseudo']}" ?> </span> 
-                                <span id="mail"> <p>Adresse email : </p><?php echo "{$row['email']}"; ?> </span>
-                            </div>
-                        <?php } ?>
+                        <p>Nom d'utilisateur : </p>
+                        <p>Adresse email :</p>
                     </div>
 
                 </div>    
@@ -66,11 +58,33 @@
                         <p>La suppression est définitive.</p>
 
                         <div class="popup-btn">
-                            <button class="btn_red confirm">Supprimer</button>
+                            <form action="compte.php" method="post">
+                                <button type="submit" name="del_user" class="btn_red confirm">Supprimer</button>
+                            </form>
                             <button class="btn_red cancel">Annuler</button>
                         </div>
                     </div>
                 </div>
+
+            <?php
+
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_account'])) {
+        
+                    $membre = $_SESSION['membre'];
+                    $dao = new DAOmembre($pdo);
+
+                    if ($dao->deleteData($membre)) {
+           
+                        session_destroy();
+                        header('Location: suppression.php');
+                        exit;
+                    } else {
+                        echo "Erreur lors de la suppression du compte.";
+                    }
+                }
+                
+            ?>
+
             </div>
         </div>
 
