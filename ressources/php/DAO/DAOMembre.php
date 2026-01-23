@@ -122,7 +122,7 @@ class DAOMembre {
         try {
             $stmt = $this->pdo->prepare($sql);
             return $stmt->execute([
-                ':pseudo' => $joueur->getPseudo()
+                ':pseudo' => $membre->getPseudo()
             ]);           
         } catch(PDOException $e) {
             throw new PDOException("Erreur de suppression dans la base de données", 0, $e);
