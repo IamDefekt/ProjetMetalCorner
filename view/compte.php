@@ -33,19 +33,24 @@
                     <img src="/ressources/media/pp.png" alt="Photo de profil">
 
                     <div class="pers">
-                        <?php require_once './../ressources/php/DAOMembre.php';
+                        <?php 
+                        
+                        require_once __DIR__ . '/../ressources/php/DAO/DAOmembre.php';
+                        require_once __DIR__ . '/../ressources/php/controller/Tools.php';
 
                         $c = new Connect();
                         $pdo = $c->connect();
-                        $stmt = $pdo -> query ('SELECT pseudo FROM membre WHERE mdp = :mdp AND email = :email ');
-                        $stmt=$pdo->prepare($sql);
-                        $stmt->execute([":email" => $email, ":mdp" => $mdp]);
-                        $membre = $stmt->fetchAll(PDO::FETCH_ASSOC); ?> 
+                        $stmt = $pdo -> query ('SELECT * FROM membre where membre.pseudo = "youtopia" ');
+                        $results = $stmt -> FetchAll();
+
+                        foreach ($results as $row) {
+                            ?> 
                             
                             <div class="php">
-                                <span id="user"> <p>Nom d'utilisateur : </p> <?php  ?> </span> 
-                                <span id="mail"> <p>Adresse email : </p><?php echo $membre; ?> </span>
+                                <span id="user"> <p>Nom d'utilisateur : </p> <?php echo "{$row['pseudo']}" ?> </span> 
+                                <span id="mail"> <p>Adresse email : </p><?php echo "{$row['email']}"; ?> </span>
                             </div>
+                        <?php } ?>
                     </div>
 
                 </div>    
@@ -197,7 +202,7 @@
 
         <span class="sep"></span>
 
-        <div id="registered_events">
+        <!-- <div id="registered_events">
 
             <h3>Mes évènements enregistrés</h3>
 
@@ -220,7 +225,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
         <div class="logout">
             <a class="btn_red" href="/ressources/php/logout.php">Se déconnecter</a>

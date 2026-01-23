@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/ressources/php/entites/entiteMembre.php.php';
-require_once __DIR__ . '/connect.php';
-require_once __DIR__ . '/controller/tools.php';
+require_once __DIR__ . '/../entites/entiteMembre.php';
+require_once __DIR__ . '/../connect.php';
+require_once __DIR__ . '/../controller/tools.php';
 
 class DAOMembre {
     private PDO $pdo;
