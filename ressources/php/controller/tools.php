@@ -14,6 +14,13 @@ class Tools {
 
         return $chaine;
     }
+
+
+    //Fonction pour hasher le password lors de l'inscription
+    public static function hashPassword(string $password): string {
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
+
 }
 
 
