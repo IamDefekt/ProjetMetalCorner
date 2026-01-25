@@ -1,3 +1,14 @@
+<?php session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: /login.php'); 
+    exit;
+}
+
+$username = $_SESSION['user']['username'];
+$email = $_SESSION['user']['email'];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,16 +44,8 @@
                     <img src="/ressources/media/pp.png" alt="Photo de profil">
 
                     <div class="pers">
-                        <?php 
-                        
-                        require_once __DIR__ . '/../ressources/php/DAO/DAOmembre.php';
-                        require_once __DIR__ . '/../ressources/php/controller/Tools.php';
-
-                        
-                        ?>
-
-                        <p>Nom d'utilisateur : </p>
-                        <p>Adresse email :</p>
+                        <p>Nom d'utilisateur : <?= htmlspecialchars($username) ?></p>
+                        <p>Adresse email : <?= htmlspecialchars($email) ?></p>
                     </div>
 
                 </div>    
