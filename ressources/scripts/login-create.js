@@ -61,7 +61,7 @@
             const formData = new FormData(signupForm);
             formData.append('action', 'signup');
             formData.append('email', email);
-            formData.append('password', password);
+            formData.append('password', mdp);
 
 
             try {
@@ -113,7 +113,7 @@
             const formData = new FormData(loginForm);
             formData.append('action', 'login');
             formData.append('email', email);
-            formData.append('password', password);
+            formData.append('password', mdp);
 
 
             try {
