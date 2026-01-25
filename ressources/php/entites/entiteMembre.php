@@ -21,14 +21,14 @@ class entiteMembre {
         $this->dateInscription = $dateInscription;
     }
 
-    
+
 //------------------------Setter------------------------
 
-    public function setidUser($idUser)                      { $this->idUser = (int)$idUser; }
-    public function setUsername($username)                  { $this->username = $username; }
-    public function setPassword($password)                  { $this->password = $password; }
-    public function setEmail($email)                        { $this->email = $email; }
-    public function setDateInscription($dateInscription)    { $this->dateInscription = $dateInscription; }
+    public function setidUser($int $idUser): void                { $this->idUser = $idUser; }
+    public function setUsername(string $username): void          { $this->username = $username; }
+    public function setPassword(string $password): void          { $this->password = $password; }
+    public function setEmail(string $email): void                { $this->email = $email; }
+    public function setDateInscription($dateInscription):void    { $this->dateInscription = $dateInscription; }
 
 
 //------------------------Getter------------------------
