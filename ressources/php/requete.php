@@ -1,136 +1,82 @@
 <?php
-require_once 'connect.php';
-session_start();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once 'connect.php';
+require_once 'DAO/DAOMembre.php';
+require_once 'controller/tools.php';
+
+session_start();
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode([
-        'success' => false,
-        'errors' => ['global' => 'Requête invalide']
-    ]);
+    echo json_encode([ 'success' => false, 'errors' => ['global' => 'Requête invalide'] ]);
     exit;
 }
 
-$username        = trim($_POST['username'] ?? '');
-$password        = trim($_POST['password'] ?? '');
-$confirmPassword = trim($_POST['password2'] ?? '');
-$email           = trim($_POST['email'] ?? '');
-$cgu             = isset($_POST['cgu']);
+$username = Tools::clearString($_POST['username'] ?? '');
+$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+$password = $_POST['password'] ?? '';
 
-$connect = new Connect();
-$pdo = $connect->connect();
-
+$dao = new DAOMembre();
 $errors = [];
-
-// ----------- INSCRIPTION -----------
-
 $action = $_POST['action'] ?? '';
 
-if ($action === 'signup' ) { 
+    // ----------- INSCRIPTION -----------
 
-    if (!$username) {
-        $errors['username'] = "Veuillez saisir un nom d'utilisateur.";
-    }
-    if (!$email) {
-        $errors['email'] = "Veuillez saisir une adresse email.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "Email invalide.";
-    }
-    if (!$password) {
-        $errors['password'] = "Veuillez saisir un mot de passe.";
-    } elseif (strlen($password) < 8) {
-        $errors['password'] = "Le mot de passe doit avoir au moins 8 caractères.";
-    }
-    if ($password !== $confirmPassword) {
-        $errors['password2'] = "Les mots de passe ne correspondent pas.";
-    }
-    if (!$cgu) {
-        $errors['cgu'] = "Vous devez accepter les CGU.";
-    }
+    if ($action === 'signup') {
 
-    // Vérifie si le pseudo existe déjà
-    if ($username) {
-        $stmt = $pdo->prepare("SELECT idUser FROM membre WHERE pseudo = :pseudo");
-        $stmt->bindParam(':pseudo', $username);
-        $stmt->execute();
-        if ($stmt->fetch()) {
-            $errors['username'] = "Ce nom d'utilisateur est déjà pris.";
+        if (!$username) { $errors['username'] = "Nom d'utilisateur invalide."; }
+        if (!$email) { $errors['email'] = "Adresse email invalide."; }
+
+        if (!empty($errors)) {
+            echo json_encode([ 'success' => false, 'errors' => $errors ]);
+            exit;
         }
-    }
 
-    if (!empty($errors)) {
-        echo json_encode([
-            'success' => false,
-            'errors' => $errors
-        ]);
+        // Vérifie si pseudo déjà utilisé
+
+        if ($dao->selectMembreByUsername($username)) { 
+            echo json_encode(['success' => false, 'errors' => ['username' => "Ce nom d'utilisateur est déjà pris."]]);
+        exit;
+        }
+
+        $mdpHash = Tools::hashPassword($password);
+        $membre = new entiteMembre(0, $username, $email, $mdpHash);
+        $dao->insertData($membre);
+
+        echo json_encode(['success' => true, 'redirect' => '/view/login.php?success=1', 'message' => 'Inscription réussie']);
         exit;
     }
 
-    // ----------- CREATION DU COMPTE -----------
-    $mdpHash = password_hash($password, PASSWORD_DEFAULT);
-    $insert = $pdo->prepare(
-        "INSERT INTO membre (pseudo, mdp, email, dateInscription)
-         VALUES (:pseudo, :mdp, :email, NOW())"
-    );
-    $insert->bindParam(':pseudo', $username);
-    $insert->bindParam(':mdp', $mdpHash);
-    $insert->bindParam(':email', $email);
-    $insert->execute();
+    // ----------- CONNEXION -----------
 
-    echo json_encode([
-        'success' => true,
-        'redirect' => '/view/login.php?success=1'
-    ]);
-    exit;
-}
+    elseif ( $action === 'login') {
 
-// ----------- CONNEXION -----------
+        if (!$email || !$password) {
+            echo json_encode(['success' => false, 'errors' => ['global' => 'Adresse email et mot de passe requis.']]);
+            exit;
+        }
 
-elseif ( $action === 'login') {
+        $membre = $dao->loginByEmail($email, $password);
+        
+        if ($membre) {
+            $_SESSION['user'] = [
+                'id'       => $membre->getIdUser(),
+                'username' => $membre->getUsername(),
+                'email'    => $membre->getEmail()
+            ];
 
-    $loginEmail = trim($_POST['loginEmail'] ?? '');
-    $loginPw    = trim($_POST['loginPw'] ?? '');
+            echo json_encode(['success' => true, 'redirect' => '/view/compte.php']);
+            exit;
+        } else {
+            echo json_encode(['success' => false, 'errors' => ['global' => "Nom d'utilisateur ou mot de passe incorrect."]]);
+            exit;
+        }
 
-    // Connexion
-    if (!$loginEmail || !$loginPw) {
-        echo json_encode([
-            'success' => false,
-            'errors' => ['global' => 'Adresse email et mot de passe requis.']
-        ]);
-        exit;
-    }
-
-    $stmt = $pdo->prepare("SELECT * FROM membre WHERE email = :email");
-    $stmt->bindParam(':email', $loginEmail);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user && password_verify($loginPw, $user['mdp'])) {
-        $_SESSION['user'] = [
-            'id'     => $user['idUser'],
-            'pseudo' => $user['pseudo'],
-            'email'  => $user['email']
-        ];
-
-        echo json_encode([
-            'success' => true,
-            'redirect' => '/view/compte.php'
-        ]);
-        exit;
     } else {
-        echo json_encode([
-            'success' => false,
-            'errors' => ['global' => 'Pseudo ou mot de passe incorrect.']
-        ]);
+        echo json_encode(['success' => false, 'errors' => ['global' => 'Requête invalide.']]);
         exit;
     }
-
-} else { 
-
-    echo json_encode([
-        'success' => false,
-        'errors' => ['global' => 'Requête invalide.']
-    ]);
-    exit;
-}
