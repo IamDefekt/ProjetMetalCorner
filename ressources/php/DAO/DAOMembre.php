@@ -8,7 +8,7 @@ class DAOMembre {
     private PDO $pdo;
 
     public function __construct() {
-        $this->pdo = Connect::cnx();
+        $this->pdo = (new Connect())->connect();
     }
 
 // ----------- SELECTIONNER USER BY USERNAME -----------
