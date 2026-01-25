@@ -24,7 +24,7 @@ class entiteMembre {
 
 //------------------------Setter------------------------
 
-    public function setidUser($int $idUser): void                { $this->idUser = $idUser; }
+    public function setidUser(int $idUser): void                 { $this->idUser = $idUser; }
     public function setUsername(string $username): void          { $this->username = $username; }
     public function setPassword(string $password): void          { $this->password = $password; }
     public function setEmail(string $email): void                { $this->email = $email; }
