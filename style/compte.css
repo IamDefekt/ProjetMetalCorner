@@ -2,9 +2,9 @@
 
 h1 { margin: 0 0 30px; }
 
-#infos h3, #alertes h3, #registered_events h3 { font-weight: bold; }
+/* #infos h3, #alertes h3, #registered_events h3 { font-weight: bold; }
 
-.ancre { display: none; }
+.ancre { display: none; } */
 
 .sep{
     display: block;
@@ -146,7 +146,7 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
     justify-content: space-between;
 }
 
-.band img {
+.img_name img {
     width: 50px;
     height: 50px;
     object-fit: cover;
@@ -165,10 +165,18 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
     gap: 20px;
 }
 
+#follow { padding: 5px 5px 3px; }
+
+#follow svg { 
+    width: 13px;
+    height: 12px;
+ }
+
+
 
 /*  EVENTS  */
 
-#registered_events { 
+/* #registered_events { 
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -199,7 +207,7 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
   transform: scale(1.2);
   transform-origin: center;
   transition: transform 0.2s ease, fill 0.2s ease;
-}
+} */
 
 
 
@@ -237,14 +245,14 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
 
     h1 { margin-bottom: 30px; }
 
-    .ancre {
+    /* .ancre {
         display: flex;
         height: 23px;
         gap: 100px;
         justify-content: center;
     }
 
-    .ancre h3 { font-weight: bold; }
+    .ancre h3 { font-weight: bold; } */
 
     #infos h3, #alertes h3, #registered_events h3 { font-weight: normal; }
 
@@ -272,11 +280,16 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
   
     .artistes { grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr)); }
 
-    .band { width: 400px; }
+    .band { width: 350px; }
 
-    #follow { text-transform: none; }
+    #follow { padding: 8px 8px 5px; } 
 
-    .band img {
+    #follow svg {
+        width: 15px;
+        height: 14px;
+    }
+
+    .img_name img {
         width: 60px;
         height: 60px;
     }
@@ -286,11 +299,11 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
         font-size: 1rem;
     }
 
-    .events { grid-template-columns: repeat(auto-fill, minmax(31rem, 1fr)); }
+    /* .events { grid-template-columns: repeat(auto-fill, minmax(31rem, 1fr)); }
 
     .events p { font-size: 1rem; }
 
-    .show { width: 400px; }
+    .show { width: 400px; } */
 
 }
 
