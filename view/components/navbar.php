@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<?php
+    if (session_status() == PHP_SESSION_NONE) { session_start(); }
+
+    if (isset($_SESSION['user'])) {
+        $username = $_SESSION['user']['username'];
+    } else {
+        $username = null; 
+    }
+?>
+
     <header>
         <nav>
 
@@ -30,7 +40,7 @@
                     <li><a href="/index.php">Accueil</a></li>
                     <li><a href="/view/actus.php">Actualités</a></li>
                     <li><a href="#">Les concerts</a></li>
-                    <li><a href="/view/login.php">Mon compte</a></li>
+                    <li><a href="/view/compte.php">Mon compte</a></li>
                     <li><a href="/view/about.php">A propos</a></li>
                     <li><a href="/view/form.php">Contact</a></li>
                 </ul>

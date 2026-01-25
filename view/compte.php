@@ -1,12 +1,12 @@
-<?php session_start();
+<?php 
+    session_start();
+    if (!isset($_SESSION['user'])) {
+        header('Location: /view/login.php'); 
+        exit;
+    }
 
-if (!isset($_SESSION['user'])) {
-    header('Location: /login.php'); 
-    exit;
-}
-
-$username = $_SESSION['user']['username'];
-$email = $_SESSION['user']['email'];
+    $username = $_SESSION['user']['username'];
+    $email = $_SESSION['user']['email'];
 ?>
 
 <!DOCTYPE html>
