@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Métal Corner - Se connecter</title>
     <link rel="stylesheet" href="/style/login.css">
-    <script src="/ressources/scripts/formSignInUp.js" defer></script>
+    <script src="/ressources/scripts/login-create.js" defer></script>
 </head>
 <body>
 
@@ -35,7 +35,7 @@
             </div>
 
             <div class="signin">
-                <a href="/view/signup.php">Vous n'avez pas encore de compte ?</a>
+                <a href="/view/create.php">Vous n'avez pas encore de compte ?</a>
             </div>
 
             <?php
