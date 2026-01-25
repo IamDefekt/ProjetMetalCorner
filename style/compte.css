@@ -218,6 +218,8 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
         gap: 50px;
         text-align: left;
     }
+
+    .pers { width: 200px; }
     
     .popup-content {
         width: 100%;
@@ -263,6 +265,7 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
     .pers {
         flex-direction: column;
         gap: 10px;
+        width: 250px;
     }
 
     .btns { gap: 15px; }
