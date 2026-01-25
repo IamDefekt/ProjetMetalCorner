@@ -1,12 +1,12 @@
-<?php 
-    session_start();
-    if (!isset($_SESSION['user'])) {
-        header('Location: /view/login.php'); 
-        exit;
-    }
+<?php session_start();
 
-    $username = $_SESSION['user']['username'];
-    $email = $_SESSION['user']['email'];
+if (!isset($_SESSION['user'])) {
+    header('Location: /view/login.php'); 
+    exit;
+}
+
+$username = $_SESSION['user']['username'];
+$email = $_SESSION['user']['email'];
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +55,46 @@
                     <button class="btn_red" id="btn2">supprimer le compte</button>
                 </div>
 
-                <div id="popup-container">
+                <div id="popup-edit">
+                    <div class="popup-content edit">
+
+                        <form action="compte.php" method="post">
+
+                            <div class="edition">
+                                <div class="editMdp">
+                                    <h3>Modifier le mot de passe : </h3>       
+
+                                    <div class="inputs">
+                                        <label for="actualPw">Mot de passe actuel :</label>
+                                        <input type="password" name="actualpw">
+
+                                        <label for="newPw">Nouveau mot de passe :</label>
+                                        <input type="password" name="newPw">
+
+                                        <label for="confirmNewPw">Confirmer le mot de passe :</label>
+                                        <input type="password" name="confirmNewPw">
+                                    </div>
+                                </div>
+
+                                <span class="sep sep2"></span>
+
+                                <div class="editPP">
+                                    <h3>Modifier la photo de profil : </h3>
+                                    <img src="/ressources/media/pp.png" alt="">
+                                    <input type="file">
+                                </div>
+                            </div>    
+
+                            <div class="popup-btn ">
+                                <button type="submit" name="confirm-change" class="btn_red confirm-change">Enregistrer</button>
+                                <button class="btn_red cancel-change">Annuler</button>
+                            </div>  
+                        </form>
+
+                    </div>
+                </div>
+
+                <div id="popup-delete">
                     <div class="popup-content">
                         <h3>Voulez-vous vraiment supprimer votre compte ?</h3>
                         <p>La suppression est définitive.</p>
@@ -295,38 +334,57 @@
 
     <script>
 
-        // MODIF PASSWORD
+        // MODIF COMPTE
+
+        const editpopup = document.getElementById('popup-edit');
+        const editbtn = document.getElementById('btn1');
+        const confirmChange = document.querySelector('.confirm-change');
+        const chancelChange = document.querySelector('.cancel-change');
+
+        editbtn.addEventListener('click', () => {
+            editpopup.classList.add('open');
+        });
+
+        chancelChange.addEventListener('click', () => {
+            editpopup.classList.remove('open');
+        });
+
+        confirmChange.addEventListener('click', () => {
+            window.location.href = 'compte.php';
+        })
 
         // SUPPRESSION COMPTE
 
-        const popup = document.getElementById('popup-container');
+        const delpopup = document.getElementById('popup-delete');
         const deletebtn = document.getElementById('btn2');
         const confirmbtn = document.querySelector('.confirm');
         const cancelbtn = document.querySelector('.cancel');
 
         deletebtn.addEventListener('click', () => {
-        popup.classList.add('open');
+            delpopup.classList.add('open');
         });
 
         cancelbtn.addEventListener('click', () => {
-        popup.classList.remove('open');
+            delpopup.classList.remove('open');
         });
 
         confirmbtn.addEventListener('click', () => {
-        window.location.href = 'suppression.php';
+            window.location.href = 'suppression.php';
         })
 
 
         // ANIMATION FAVORIS 
 
-        const heart = document.querySelector("#heart path");
+        // const heart = document.querySelector("#heart path");
 
-        heart.addEventListener('click', () => {
-          heart.classList.toggle('liked');
-        });
+        // heart.addEventListener('click', () => {
+        //   heart.classList.toggle('liked');
+        // });
 
     </script>
 
 </body>
 </html>
+
+
 
