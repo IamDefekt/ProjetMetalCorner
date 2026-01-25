@@ -11,75 +11,95 @@ class DAOMembre {
         $this->pdo = Connect::cnx();
     }
 
-// ----------- SELECTIONNER USER BY PSEUDO -----------
+// ----------- SELECTIONNER USER BY USERNAME -----------
 
-    public function selectMembrebyPseudo(string $pseudo):array {
-        $membres = [];
-        $sql = 'SELECT * FROM membre WHERE pseudo LIKE :pseudo';
+    public function selectMembreByUsername(string $username): ?entiteMembre {
+        $sql = 'SELECT * FROM membres WHERE username = :username LIMIT 1';
 
-        try {
-            $stmt = $this->pdo-prepare($sql);
-            $stmt->execute([":pseudo" => $pseudo]);
-
-            while ($ligne = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $membre = new entiteMembre();
-
-                $membre->setidUser($ligne['idUser']);
-                $membre->setPseudo($ligne['pseudo']);
-                $membre->setEmail($ligne['email']);
-                $membre->setMdp($ligne['mdp']);
-                $membre->setDateInscription($ligne['dateInscription']);
-
-                $membres[] = $membre;
-            }
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([":username" => $username]);
+        $ligne = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$ligne) {
+            return null;
         }
-        catch(PDOException $e) {
-            throw new PDOException ('Erreur de connexion à la base de données', 0, $e);
-        }
-        return $membres;
+
+        return new entiteMembre(
+            $ligne['idUser'],
+            $ligne['username'],
+            $ligne['email'],
+            $ligne['password'],
+            $ligne['dateInscription']
+        );
     }
 
 // ----------- SELECTIONNER USER BY ID -----------
 
-    public function selectMembreById(int $idUser): entiteMembre {
-            $sql = "SELECT * FROM membre WHERE idUser = :idUser";
+    public function selectMembreById(int $idUser): ?entiteMembre {
+            $sql = "SELECT * FROM membres WHERE idUser = :idUser LIMIT 1";
 
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([':idUser' => $idUser]);
-
             $ligne = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            $membre = new entiteMembre();
-            $membre->setidUser($ligne['idUser']);
-            $membre->setPseudo($ligne['pseudo']);
-            $membre->setMdp($ligne['mdp']);
-            $membre->setEmail($ligne['email']);
-            $membre->setDateInscription($ligne['dateInscription']);
+            if (!$ligne) {
+                return null; // User introuvable
+            }
 
-            return $membre;
+            return new entiteMembre(
+                $ligne['idUser'],
+                $ligne['username'],
+                $ligne['email'],
+                $ligne['password'],
+                $ligne['dateInscription']
+            );
+    }
+
+// ----------- CONNEXION D'UN USER -----------   
+
+    public function loginByEmail(string $email, string $password): ?entiteMembre {
+        $sql = "SELECT * FROM membres WHERE email = :email LIMIT 1";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        $ligne = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$ligne) {
+            return null; // User introuvable
+        }
+
+        // Vérif du mdp
+        if (!password_verify($password, $ligne['password'])) {
+            return null; // Mdp incorrect
+        }
+
+        return new entiteMembre(
+            $ligne['idUser'],
+            $ligne['username'],
+            $ligne['email'],
+            $ligne['password'],
+            $ligne['dateInscription']
+        );
     }
 
 // ----------- INSERER USER DANS BDD -----------
 
     public function insertData(entiteMembre $membre):bool {
         $sql = "
-            INSERT INTO membres 
-            (pseudo, email, mdp, dateInscription)
-            VALUES (:pseudo, :email, :mdp, :dateInscription)
+            INSERT INTO membres (username, email, password, dateInscription)
+            VALUES (:username, :email, :password, NOW())
         ";
 
         try {
             $stmt = $this->pdo->prepare($sql);
             return $stmt->execute([
-                ':pseudo'           => $membre->getPseudo(),
-                ':email'            => $membre->getEmail(),
-                ':mdp'              => $membre->getMdp(),
-                ':dateInscription'  => date('Y-m-d')
+                ':username' => $membre->getUsername(),
+                ':email' => $membre->getEmail(),
+                ':password' => $membre->getPassword(),
             ]);
         }
         catch(PDOException $e) {
             throw new PDOException ("Erreur d'écriture dans la base de données", 0, $e);
-            return false;
         }
     }
 
@@ -87,10 +107,10 @@ class DAOMembre {
 
     public function updateData (entiteMembre $membre):bool {
         $sql = "
-            UPDATE membre SET
-            pseudo = :pseudo,
-            email = :email;
-            mdp = :mdp;
+            UPDATE membres SET
+            username = :username,
+            email = :email,
+            password = :password,
             dateInscription = :dateInscription
             WHERE idUser = :idUser;
         ";
@@ -98,16 +118,15 @@ class DAOMembre {
         try {
             $stmt = $this->pdo->prepare($sql);
             return $stmt->execute([
-                ':idUser'           => (int)$membre->getidUser(),
-                ':pseudo'           => Tools::clearString($membre->getPseudo()),
-                ':email'            => strtolower($membre->getEmail()),
-                ':mdp'              => $membre->getMdp(),
-                ':dateInscription'  => $membre->getDateInscription()
+                ':idUser' => (int)$membre->getidUser(),
+                ':username' => Tools::clearString($membre->getUsername()),
+                ':email' => strtolower($membre->getEmail()),
+                ':password' => $membre->getPassword(),
+                ':dateInscription' => $membre->getDateInscription()
             ]);
         }
         catch (PDOException $e) {
             throw new PDOException("Erreur de mise à jour de la base de données", 0, $e);
-            return false;
         }
     }
 
@@ -115,7 +134,7 @@ class DAOMembre {
 
     public function deleteData (entiteMembre $membre): bool {
         $sql='
-        DELETE FROM membre
+        DELETE FROM membres
         WHERE idUser = :idUser;
         ';
 
