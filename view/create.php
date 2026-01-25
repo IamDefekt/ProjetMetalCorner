@@ -15,9 +15,9 @@
 
         <h1>Créer mon compte</h1>
 
-        <form method="POST" action="/ressources/php/requete.php" id="createAccount">
+        <form method="POST" action="/ressources/php/requete.php" id="createAccount" >
 
-            <label for="name" style="width:125px">Nom d'utilisateur</label>
+            <label for="username" style="width:125px">Nom d'utilisateur</label>
             <input placeholder="Obligatoire" type="text" name="username" id="createUser" tabindex="1"> 
 
             <span id='errorUsername'></span>
@@ -32,7 +32,7 @@
 
             <span id='errorPw' aria-live="polite"></span>
 
-            <label for="password" style="width:186px">Confirmer le mot de passe</label>
+            <label for="password2" style="width:186px">Confirmer le mot de passe</label>
             <input placeholder="Obligatoire" type="password" name="password2" id="confirmPW" tabindex="4">
 
             <span id='errorPw2' aria-live="polite"></span>
@@ -44,6 +44,7 @@
 
             <span id='errorCgu' aria-live="polite"></span>
 
+            <input type="hidden" name="action" value="signup">
             <button class="btn_red" type="submit">Créer mon compte</button>
 
             <span id='errorForm' aria-live="polite"></span>

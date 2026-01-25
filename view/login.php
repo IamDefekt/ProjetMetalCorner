@@ -27,6 +27,7 @@
                 <label style="width:95px">Mot de passe</label>
                 <input placeholder="Obligatoire" type="password" name="password" id="loginPw" tabindex="2" required>
 
+                <input type="hidden" name="action" value="login">
                 <button class="btn_red" type="submit">Se connecter</button>
             </form>
 
