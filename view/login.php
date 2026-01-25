@@ -20,12 +20,12 @@
             <form method="POST" action="/ressources/php/requete.php" id="login">
 
                 <label style="width:101px">Adresse email</label>
-                <input placeholder="Obligatoire" type="email" name="loginEmail" id="loginEmail" tabindex="1" required> 
+                <input placeholder="Obligatoire" type="email" name="email" id="loginEmail" tabindex="1" required> 
 
                 <span id="errorLogin"></span>
 
                 <label style="width:95px">Mot de passe</label>
-                <input placeholder="Obligatoire" type="password" name="loginPw" id="loginPw" tabindex="2" required>
+                <input placeholder="Obligatoire" type="password" name="password" id="loginPw" tabindex="2" required>
 
                 <button class="btn_red" type="submit">Se connecter</button>
             </form>
