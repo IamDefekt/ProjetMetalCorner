@@ -54,21 +54,7 @@ h1 { margin: 0 0 30px; }
     gap: 10px;
 }
 
-.php {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.php p { font-weight: bold;}
-
-#user, #mail {
-    display: flex;
-    gap: 5px;
-}
-
-.pers a { text-decoration: underline;}
+.pers span { font-weight: bold; }
 
 .btns {
     display: flex;
@@ -217,17 +203,16 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
 
     .infos_perso { 
         flex-direction: row;
-        gap: 80px;
         align-items: center;
     }
 
     .pp_pers{
         flex-direction: row;
-        gap: 50px;
+        gap: 30px;
         text-align: left;
     }
 
-    .pers { width: 200px; }
+    .pers { width: 250px; }
     
     .popup-content {
         width: 100%;
@@ -273,7 +258,7 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
     .pers {
         flex-direction: column;
         gap: 10px;
-        width: 250px;
+        width: 300px;
     }
 
     .btns { gap: 15px; }

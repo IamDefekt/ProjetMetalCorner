@@ -38,14 +38,14 @@ $email = $_SESSION['user']['email'];
             <h3>Informations personnelles</h3>
 
             <div class="infos_perso">
-
+                
                 <div class="pp_pers">
 
                     <img src="/ressources/media/pp.png" alt="Photo de profil">
 
                     <div class="pers">
-                        <p>Nom d'utilisateur : <?= htmlspecialchars($username) ?></p>
-                        <p>Adresse email : <?= htmlspecialchars($email) ?></p>
+                        <p><span>Nom d'utilisateur :</span> <?= htmlspecialchars($username) ?></p>
+                        <p><span>Adresse email :</span> <?= htmlspecialchars($email) ?></p>
                     </div>
 
                 </div>    
@@ -69,26 +69,8 @@ $email = $_SESSION['user']['email'];
                     </div>
                 </div>
 
-            <?php
-
-                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_account'])) {
-        
-                    $membre = $_SESSION['membre'];
-                    $dao = new DAOmembre($pdo);
-
-                    if ($dao->deleteData($membre)) {
-           
-                        session_destroy();
-                        header('Location: suppression.php');
-                        exit;
-                    } else {
-                        echo "Erreur lors de la suppression du compte.";
-                    }
-                }
-                
-            ?>
-
             </div>
+
         </div>
 
         <span class="sep"></span>
