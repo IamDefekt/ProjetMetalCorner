@@ -133,6 +133,7 @@
                     const editbtn = document.getElementById('btn1');
                     const confirmChange = document.querySelector('.confirm-change');
                     const cancelChange = document.querySelector('.cancel-change');
+                    const successMessage = document.querySelector('.success-message');
 
                     editbtn.addEventListener('click', () => {
                         editpopup.classList.add('open');
@@ -141,6 +142,20 @@
                     cancelChange.addEventListener('click', () => {
                         document.getElementById('edit').reset();
                         editpopup.classList.remove('open');
+                    });
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const successMessage = document.querySelector('.success-message');
+
+                        if (successMessage) {
+                            setTimeout(() => {
+                                successMessage.classList.add('hide');
+
+                                successMessage.addEventListener('transitionend', () => {
+                                    successMessage.remove();
+                                });
+                            }, 3000);
+                        }
                     });
 
                     // AFFICHER FICHIER SELECTIONNE PAR USER
@@ -191,7 +206,7 @@
 
         </div>
 
-        <span class="sep"></span>
+        <span class="sep2"></span>
 
         <div id="alertes">
 
