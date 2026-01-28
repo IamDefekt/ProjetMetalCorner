@@ -1,12 +1,18 @@
 <?php session_start();
 
-if (!isset($_SESSION['user'])) {
-    header('Location: /view/login.php'); 
-    exit;
-}
+    $successMessage = null;
 
-$username = $_SESSION['user']['username'];
-$email = $_SESSION['user']['email'];
+    if (isset($_GET['success']) && $_GET['success'] === '1') {
+        $successMessage = "Modifications enregistrées avec succès.";
+    }
+
+    if (!isset($_SESSION['user'])) {
+        header('Location: /view/login.php'); 
+        exit;
+    }
+
+    $username = $_SESSION['user']['username'];
+    $email = $_SESSION['user']['email'];
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +30,14 @@ $email = $_SESSION['user']['email'];
     <main>
 
         <h1>Mon Compte</h1>
-<!-- 
+
         <div class="ancre">
             <h3><a href="#infos">Informations personnelles</a></h3> 
             <h3><a href="#alertes">Mes alertes</a></h3>
             <h3><a href="#registered_events">évènements enregistrés</a></h3>
         </div> 
 
-        <span class="sep"></span>-->
+        <span class="sep"></span>
 
         <div id="infos">
 
@@ -57,7 +63,7 @@ $email = $_SESSION['user']['email'];
 
                 <div id="popup-edit">
                     <div class="popup-content">
-                        <form action="compte.php" method="post">
+                        <form action="/ressources/php/requete.php" method="post" id='edit'>
 
                             <div class="update">
 
@@ -68,7 +74,7 @@ $email = $_SESSION['user']['email'];
                                     <div class="modifs">                        
                                         <label for="file-upload" 
                                         class="file-button">Choisir un fichier</label>
-                                        <input type="file" id="file-upload" hidden>
+                                        <input type="hidden" name="action" value="edit">
                                         <span id="file-name"></span>
                                     </div>
                                 </div>
@@ -81,7 +87,7 @@ $email = $_SESSION['user']['email'];
 
                                         <div class="modifs">
                                             <label for="username">Nouveau nom d'utilisateur :</label>
-                                            <input type="username" name="username">
+                                            <input type="text" name="username">
                                         </div>
                                     </div>
 
@@ -90,7 +96,7 @@ $email = $_SESSION['user']['email'];
 
                                         <div class="modifs">
                                             <label for="email">Nouvelle adresse email</label>
-                                            <input type="email" name="email">
+                                            <input type="text" name="email">
                                         </div>
                                     </div>
 
@@ -99,8 +105,8 @@ $email = $_SESSION['user']['email'];
                                         <h3>Modifier le mot de passe : </h3>       
 
                                         <div class="modifs">
-                                            <label for="actualPw">Mot de passe actuel :</label>
-                                            <input type="password" name="actualpw">
+                                            <label for="password">Mot de passe actuel :</label>
+                                            <input type="password" name="password">
 
                                             <label for="newPw">Nouveau mot de passe :</label>
                                             <input type="password" name="newPw">
@@ -120,16 +126,14 @@ $email = $_SESSION['user']['email'];
                     </div>
                 </div>
                                     
-        <script>
-            const input = document.getElementById('file-upload');
-            const fileName = document.getElementById('file-name');
+                <script>
+                    const input = document.getElementById('file-upload');
+                    const fileName = document.getElementById('file-name');
 
-            input.addEventListener('change', () => {
-                fileName.textContent = input.files[0]?.name || '';
-            });
-        </script>
-
-
+                    input.addEventListener('change', () => {
+                        fileName.textContent = input.files[0]?.name || '';
+                    });
+                </script>
 
                 <div id="popup-delete">
                     <div class="popup-content">
@@ -137,15 +141,18 @@ $email = $_SESSION['user']['email'];
                         <p>La suppression est définitive.</p>
 
                         <div class="popup-btn">
-                            <form action="compte.php" method="post">
+                            <form action="/ressources/php/requete.php" method="post" id='delete'>
                                 <button type="submit" name="del_user" class="btn_red confirm">Supprimer</button>
                             </form>
                             <button class="btn_red cancel">Annuler</button>
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <?php if ($successMessage): ?>
+                <div class="success-message"><?= htmlspecialchars($successMessage) ?></div>
+            <?php endif; ?>            
 
         </div>
 
@@ -386,10 +393,6 @@ $email = $_SESSION['user']['email'];
             editpopup.classList.remove('open');
         });
 
-        confirmChange.addEventListener('click', () => {
-            window.location.href = 'compte.php';
-        })
-
         // SUPPRESSION COMPTE
 
         const delpopup = document.getElementById('popup-delete');
@@ -405,9 +408,6 @@ $email = $_SESSION['user']['email'];
             delpopup.classList.remove('open');
         });
 
-        confirmbtn.addEventListener('click', () => {
-            window.location.href = 'suppression.php';
-        })
 
 
         // ANIMATION FAVORIS 

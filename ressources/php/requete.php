@@ -72,7 +72,33 @@ $action = $_POST['action'] ?? '';
             exit;
         }
 
-    } else {
-        echo json_encode(['success' => false, 'errors' => ['global' => 'Requête invalide.']]);
-        exit;
-    }
+        } 
+    
+
+    // ----------- MODIFICATION DES INFORMATIONS -----------
+
+    elseif ($action === 'edit') {
+
+        $tab = $dao->selectMembreByUsername($_SESSION['user']['username']);
+        $membre = $tab;
+
+        if (!empty($_POST['username'])) {
+            $membre->setUsername($_POST['username']);
+        }
+
+        if (!empty($_POST['email'])) {
+            $membre->setEmail($_POST['email']);
+        }
+
+        if (!empty($_POST['newPw'])) {
+            $membre->setPassword(Tools::hashPassword($_POST['newPw']));
+        }
+
+        $dao->updateData($membre);
+
+        $_SESSION['user']['username'] = $membre->getUsername();
+        $_SESSION['user']['email'] = $membre->getEmail();
+
+        header('Location: /view/compte.php?success=1');
+
+    } 
