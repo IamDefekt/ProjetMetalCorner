@@ -1,10 +1,10 @@
-/*  VERSION MOBILE  */
+/* ----------- VERSION MOBILE ----------- */
 
 h1 { margin: 0 0 30px; }
 
-/* #infos h3, #alertes h3, #registered_events h3 { font-weight: bold; }
+#infos h3, #alertes h3, #registered_events h3 { font-weight: bold; }
 
-.ancre { display: none; } */
+.ancre { display: none; }
 
 .sep{
     display: block;
@@ -16,7 +16,7 @@ h1 { margin: 0 0 30px; }
 }
 
 
-/*  INFO PERSO  */
+/* ----------- INFO PERSO ----------- */
 
 #infos {
     display: flex;
@@ -63,6 +63,8 @@ h1 { margin: 0 0 30px; }
 }
 
 
+/* ----------- POP-UP ----------- */
+
 #popup-delete, #popup-edit {
     display: none;
     position: fixed;
@@ -70,8 +72,22 @@ h1 { margin: 0 0 30px; }
     background-color: rgba(0, 0, 0, 0.277);
     z-index: 1;
 }
-
 #popup-delete.open, #popup-edit.open { display: block !important; }
+#popup-edit button {width: 130px;}
+#popup-delete button {width: 110px;}
+#popup-edit, #popup-delete button {
+    margin-top: 10px;
+}
+.popup-btn { 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+#popup-edit img {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+}
 
 .popup-content {
     max-width: 650px;
@@ -86,60 +102,7 @@ h1 { margin: 0 0 30px; }
     transform: translate(-50%, -50%);
 }
 
-.popup-content h3 { color: var(--txtBlack); }
-
-.popup-content img {
-    width: 150px;
-    border-radius: 50%;
-}
-
-.edit {
-    max-width: 800px;
-    padding: 30px 0;
-}
-
-.edit form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-}
-
-.edition {
-    display: flex;
-    align-items: center;
-    position: relative;
-    gap: 100px;
-}
-
-.editMdp input {
-    height: 25px;
-    width: 200px;
-    border-radius: 5px;
-    background-color: var(--bgColor);
-    border : 1px solid var(--txtBlack); 
-    font-family: Lato;
-    padding-left: 5px;
-}
-
-.inputs { 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.edit label { transform: translateY(5px) }
-
-.editMdp, .editPP {
-    height: 230px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.editMdp { gap: 30px; }
-
-.editPP { justify-content: space-between; }
+#popup-edit .popup-content { max-width: 750px;}
 
 .popup-content p {
     color: var(--txtBlack);
@@ -147,35 +110,77 @@ h1 { margin: 0 0 30px; }
     padding: 20px 0;    
 }
 
-.sep2 {
-    width: 220px;
-    transform: rotate(90deg);
-    transform-origin: left top;
-    position: absolute;
-    top: 3%;
-    left: 43%;
-    margin: 0;
-}
-
 body.dark .popup-content { background-color: rgb(48, 46, 46);}
 
 body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc);}
 
-.popup-btn { 
+form {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
 
-.popup-content button {
-    width: 110px;
-    margin-top: 10px;
-    display: inline-block;
+form input, .file-button {
+    margin: 0 auto;
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--bgColor);
+    border: 1px solid var(--txtBlack);
+    font-family: Lato;
 }
 
-.edit button { width: 130px; }
+form input {width: 250px;}
 
-/*  ALERTES  */
+.file-button {
+    width: 230px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    background-color: var(--mainColor);
+    color: var(--txtBlanc);
+    text-transform: uppercase;
+}
+
+.editInfosPers label{ margin-left: 20px; }
+
+.update {
+    display: flex;
+    gap: 50px;
+}
+
+.editInfosPers, .editPP {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.editPP { align-items: center;
+    justify-content: space-evenly;
+    gap: 0;
+}
+
+form label { font-weight: normal; }
+
+.editMdp label { margin-top: 10px;}
+
+.modifs {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2px;
+}
+
+.editPP .modifs { height: 50px; }
+
+span {text-decoration: underline;}
+
+.editUsername h3, .editEmail h3, .editMdp h3 { margin-bottom: 15px;}
+.editUsername h3, .editEmail h3, .editMdp h3, .editPP h3 { font-weight: bold; }
+    
+
+/* ----------- ALERTES ----------- */
 
 #alertes {
     display: flex;
@@ -224,10 +229,9 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
  }
 
 
+/* ----------- EVENTS -----------  
 
-/*  EVENTS  */
-
-/* #registered_events { 
+#registered_events { 
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -261,8 +265,7 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
 } */
 
 
-
-/*  VERSION TABLETTE  */
+/* ----------- VERSION TABLETTE ----------- */
 
 @media (min-width: 426px) {
 
@@ -286,7 +289,6 @@ body.dark .popup-content p, body.dark .popup-content h3 { color: var(--txtBlanc)
 
     .php { align-items: flex-start;}
 }
-
 
 
 /*  VERSION 1024  */

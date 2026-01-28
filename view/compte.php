@@ -56,43 +56,80 @@ $email = $_SESSION['user']['email'];
                 </div>
 
                 <div id="popup-edit">
-                    <div class="popup-content edit">
-
+                    <div class="popup-content">
                         <form action="compte.php" method="post">
 
-                            <div class="edition">
-                                <div class="editMdp">
-                                    <h3>Modifier le mot de passe : </h3>       
-
-                                    <div class="inputs">
-                                        <label for="actualPw">Mot de passe actuel :</label>
-                                        <input type="password" name="actualpw">
-
-                                        <label for="newPw">Nouveau mot de passe :</label>
-                                        <input type="password" name="newPw">
-
-                                        <label for="confirmNewPw">Confirmer le mot de passe :</label>
-                                        <input type="password" name="confirmNewPw">
-                                    </div>
-                                </div>
-
-                                <span class="sep sep2"></span>
+                            <div class="update">
 
                                 <div class="editPP">
                                     <h3>Modifier la photo de profil : </h3>
                                     <img src="/ressources/media/pp.png" alt="">
-                                    <input type="file">
+
+                                    <div class="modifs">                        
+                                        <label for="file-upload" 
+                                        class="file-button">Choisir un fichier</label>
+                                        <input type="file" id="file-upload" hidden>
+                                        <span id="file-name"></span>
+                                    </div>
                                 </div>
-                            </div>    
+
+                                <div class="editInfosPers">
+
+                                    <div class="editUsername">
+
+                                        <h3>Modifier le nom d'utilisateur:</h3>
+
+                                        <div class="modifs">
+                                            <label for="username">Nouveau nom d'utilisateur :</label>
+                                            <input type="username" name="username">
+                                        </div>
+                                    </div>
+
+                                    <div class="editEmail">
+                                        <h3>Modifier l'adresse email :</h3>
+
+                                        <div class="modifs">
+                                            <label for="email">Nouvelle adresse email</label>
+                                            <input type="email" name="email">
+                                        </div>
+                                    </div>
+
+                                    <div class="editMdp">
+                                        
+                                        <h3>Modifier le mot de passe : </h3>       
+
+                                        <div class="modifs">
+                                            <label for="actualPw">Mot de passe actuel :</label>
+                                            <input type="password" name="actualpw">
+
+                                            <label for="newPw">Nouveau mot de passe :</label>
+                                            <input type="password" name="newPw">
+
+                                            <label for="confirmNewPw">Confirmer le mot de passe :</label>
+                                            <input type="password" name="confirmNewPw">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
 
                             <div class="popup-btn ">
                                 <button type="submit" name="confirm-change" class="btn_red confirm-change">Enregistrer</button>
                                 <button class="btn_red cancel-change">Annuler</button>
                             </div>  
                         </form>
-
                     </div>
                 </div>
+                                    
+        <script>
+            const input = document.getElementById('file-upload');
+            const fileName = document.getElementById('file-name');
+
+            input.addEventListener('change', () => {
+                fileName.textContent = input.files[0]?.name || '';
+            });
+        </script>
+
+
 
                 <div id="popup-delete">
                     <div class="popup-content">
