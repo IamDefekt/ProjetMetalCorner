@@ -120,19 +120,37 @@
 
                             <div class="popup-btn ">
                                 <button type="submit" name="confirm-change" class="btn_red confirm-change">Enregistrer</button>
-                                <button class="btn_red cancel-change">Annuler</button>
+                                <button type ='button' class="btn_red cancel-change">Annuler</button>
                             </div>  
                         </form>
                     </div>
                 </div>
                                     
                 <script>
+
+                    // MODIF COMPTE
+                    const editpopup = document.getElementById('popup-edit');
+                    const editbtn = document.getElementById('btn1');
+                    const confirmChange = document.querySelector('.confirm-change');
+                    const cancelChange = document.querySelector('.cancel-change');
+
+                    editbtn.addEventListener('click', () => {
+                        editpopup.classList.add('open');
+                    });
+
+                    cancelChange.addEventListener('click', () => {
+                        document.getElementById('edit').reset();
+                        editpopup.classList.remove('open');
+                    });
+
+                    // AFFICHER FICHIER SELECTIONNE PAR USER
                     const input = document.getElementById('file-upload');
                     const fileName = document.getElementById('file-name');
 
                     input.addEventListener('change', () => {
                         fileName.textContent = input.files[0]?.name || '';
                     });
+
                 </script>
 
                 <div id="popup-delete">
@@ -144,10 +162,27 @@
                             <form action="/ressources/php/requete.php" method="post" id='delete'>
                                 <button type="submit" name="del_user" class="btn_red confirm">Supprimer</button>
                             </form>
-                            <button class="btn_red cancel">Annuler</button>
+                            <button type='button' class="btn_red cancel">Annuler</button>
                         </div>
                     </div>
                 </div>
+                
+                <script>
+
+                    // SUPPRESSION COMPTE
+                    const delpopup = document.getElementById('popup-delete');
+                    const deletebtn = document.getElementById('btn2');
+                    const cancelbtn = document.querySelector('.cancel');
+
+                    deletebtn.addEventListener('click', () => {
+                        delpopup.classList.add('open');
+                    });
+
+                    cancelbtn.addEventListener('click', () => {
+                        delpopup.classList.remove('open');
+                    });
+
+                </script>
             </div>
 
             <?php if ($successMessage): ?>
@@ -378,39 +413,7 @@
 
     <script>
 
-        // MODIF COMPTE
-
-        const editpopup = document.getElementById('popup-edit');
-        const editbtn = document.getElementById('btn1');
-        const confirmChange = document.querySelector('.confirm-change');
-        const chancelChange = document.querySelector('.cancel-change');
-
-        editbtn.addEventListener('click', () => {
-            editpopup.classList.add('open');
-        });
-
-        chancelChange.addEventListener('click', () => {
-            editpopup.classList.remove('open');
-        });
-
-        // SUPPRESSION COMPTE
-
-        const delpopup = document.getElementById('popup-delete');
-        const deletebtn = document.getElementById('btn2');
-        const confirmbtn = document.querySelector('.confirm');
-        const cancelbtn = document.querySelector('.cancel');
-
-        deletebtn.addEventListener('click', () => {
-            delpopup.classList.add('open');
-        });
-
-        cancelbtn.addEventListener('click', () => {
-            delpopup.classList.remove('open');
-        });
-
-
-
-        // ANIMATION FAVORIS 
+// ANIMATION FAVORIS 
 
         // const heart = document.querySelector("#heart path");
 
